@@ -1,7 +1,9 @@
+//Imports
+import * as func from "./lib/functions";
+
 //Class
 export class Derya{
     parse(str:string):string{
-
-        return undefined;
+        return func.parse(str);
     }
 }
