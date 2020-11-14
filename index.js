@@ -1,16 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Parser = void 0;
+exports.CSSParser = exports.CSSElement = exports.CSSAttribute = void 0;
 //Imports
 var func = require("./lib/functions");
+//Exports
+var functions_1 = require("./lib/functions");
+Object.defineProperty(exports, "CSSAttribute", { enumerable: true, get: function () { return functions_1.CSSAttribute; } });
+Object.defineProperty(exports, "CSSElement", { enumerable: true, get: function () { return functions_1.CSSElement; } });
 //Class
-var Parser = /** @class */ (function () {
-    function Parser() {
+var CSSParser = /** @class */ (function () {
+    function CSSParser() {
     }
-    Parser.prototype.parse = function (str) {
-        return func.parse(str);
+    CSSParser.prototype.getElements = function () {
+        return this.elements;
     };
-    return Parser;
+    CSSParser.prototype.parse = function (str) {
+        this.elements = func.parse(str);
+    };
+    return CSSParser;
 }());
-exports.Parser = Parser;
+exports.CSSParser = CSSParser;
 //# sourceMappingURL=index.js.map

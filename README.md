@@ -1,7 +1,6 @@
 # Derya - CSS-Parser
 
-Just a small and simple Parser for CSS-Files. Cuts the CSS-String into
-individual Elements.
+CSS-Parser, developed in TypeScript on Node.js.
 
 **Works only with valid CSS-Code**
 
@@ -10,10 +9,8 @@ individual Elements.
 import{Parser} from "./index";
 let parser = new Parser();
 ...
-parser.parse(cssString);
+let css = parser.parse(cssString);
 ```
 
 ##Return
-Returns an Array of Strings, containing all CSS-Elements, except Comments.
-
-Cascaded Styles (for Example in @media) are parsed as one Element.
+Returns an Array of CSS-Elements with all Sub-Elements and Attributes.
