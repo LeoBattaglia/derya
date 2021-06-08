@@ -1,16 +1,6 @@
-# Derya - CSS-Parser
+# Derya - Multi-Parser
 
-CSS-Parser, developed in TypeScript on Node.js.
+Multi-Parser, developed in TypeScript on Node.js.
 
-**Works only with valid CSS-Code**
+**NOT USABLE. Please check again later.**
 
-##Usage
-```
-import{Parser} from "./index";
-let parser = new Parser();
-...
-let css = parser.parse(cssString);
-```
-
-##Return
-Returns an Array of CSS-Elements with all Sub-Elements and Attributes.
