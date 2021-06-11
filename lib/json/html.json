@@ -1,0 +1,14 @@
+{
+    "tags": [
+        {
+            "name": "doctype",
+            "tag": "!DOCTYPE html",
+            "end": ""
+        },
+        {
+            "name": "title",
+            "tag": "title",
+            "end": "/title"
+        }
+    ]
+}

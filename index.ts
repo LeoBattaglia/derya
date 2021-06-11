@@ -1,4 +1,6 @@
-const html = require("html");
+//Constants
+const html = require("./lib/html");
+export const sourcecode = require("./lib/sourcecode");
 
 //Classes
 export class Coder{
@@ -16,14 +18,17 @@ export class Coder{
     }
 
     //Methods
-    createEmptyPage():string{
-        return this.getTag("doctype");
+    getEmptyPage():string{
+        return html.getEmptyPage();
+    }
+    getNewSourceCode(){
+        return new sourcecode.SourceCode();
+
     }
     getTag(name:string):string{
-        for(let tag of html.tags){
-            if(tag.name === name){
-                return tag.tag;
-            }
+        switch(this.mode){
+            case this.mode_html:
+                return html.getTag(name);
         }
         return undefined;
     }

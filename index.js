@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Coder = void 0;
-var html = require("html");
+exports.Coder = exports.sourcecode = void 0;
+//Constants
+var html = require("./lib/html");
+exports.sourcecode = require("./lib/sourcecode");
 //Classes
 var Coder = /** @class */ (function () {
     //Constructor
@@ -14,15 +16,16 @@ var Coder = /** @class */ (function () {
         this.mode = mode;
     }
     //Methods
-    Coder.prototype.createEmptyPage = function () {
-        return this.getTag("doctype");
+    Coder.prototype.getEmptyPage = function () {
+        return html.getEmptyPage();
+    };
+    Coder.prototype.getNewSourceCode = function () {
+        return new exports.sourcecode.SourceCode();
     };
     Coder.prototype.getTag = function (name) {
-        for (var _i = 0, _a = html.tags; _i < _a.length; _i++) {
-            var tag = _a[_i];
-            if (tag.name === name) {
-                return tag.tag;
-            }
+        switch (this.mode) {
+            case this.mode_html:
+                return html.getTag(name);
         }
         return undefined;
     };
