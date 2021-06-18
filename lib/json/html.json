@@ -1,9 +1,19 @@
 {
     "tags": [
         {
+            "name": "body",
+            "tag": "body",
+            "end": "/body"
+        },
+        {
             "name": "doctype",
             "tag": "!DOCTYPE html",
             "end": ""
+        },
+        {
+            "name": "head",
+            "tag": "head",
+            "end": "/head"
         },
         {
             "name": "title",

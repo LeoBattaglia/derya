@@ -1,4 +1,6 @@
 //Constants
+import {SourceCode} from "./lib/sourcecode";
+
 const html = require("./lib/html");
 export const sourcecode = require("./lib/sourcecode");
 
@@ -21,9 +23,8 @@ export class Coder{
     getEmptyPage():string{
         return html.getEmptyPage();
     }
-    getNewSourceCode(){
+    getNewSourceCode():SourceCode{
         return new sourcecode.SourceCode();
-
     }
     getTag(name:string):string{
         switch(this.mode){

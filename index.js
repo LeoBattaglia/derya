@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Coder = exports.sourcecode = void 0;
-//Constants
 var html = require("./lib/html");
 exports.sourcecode = require("./lib/sourcecode");
 //Classes
