@@ -15,9 +15,6 @@ var Coder = /** @class */ (function () {
         this.mode = mode;
     }
     //Methods
-    Coder.prototype.getEmptyPage = function () {
-        return html.getEmptyPage();
-    };
     Coder.prototype.getNewSourceCode = function () {
         return new exports.sourcecode.SourceCode();
     };

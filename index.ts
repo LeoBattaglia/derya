@@ -20,9 +20,6 @@ export class Coder{
     }
 
     //Methods
-    getEmptyPage():string{
-        return html.getEmptyPage();
-    }
     getNewSourceCode():SourceCode{
         return new sourcecode.SourceCode();
     }

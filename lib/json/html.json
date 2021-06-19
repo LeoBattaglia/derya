@@ -1,9 +1,24 @@
 {
     "tags": [
         {
+            "name": "a",
+            "tag": "a",
+            "end": "/a"
+        },
+        {
             "name": "body",
             "tag": "body",
             "end": "/body"
+        },
+        {
+            "name": "canvas",
+            "tag": "canvas",
+            "end": "/canvas"
+        },
+        {
+            "name": "div",
+            "tag": "div",
+            "end": "/div"
         },
         {
             "name": "doctype",
@@ -11,14 +26,129 @@
             "end": ""
         },
         {
+            "name": "footer",
+            "tag": "footer",
+            "end": "/footer"
+        },
+        {
+            "name": "form",
+            "tag": "form",
+            "end": "/form"
+        },
+        {
+            "name": "h1",
+            "tag": "h1",
+            "end": "/h1"
+        },
+        {
+            "name": "h2",
+            "tag": "h2",
+            "end": "/h2"
+        },
+        {
+            "name": "h3",
+            "tag": "h3",
+            "end": "/h3"
+        },
+        {
+            "name": "h4",
+            "tag": "h4",
+            "end": "/h4"
+        },
+        {
+            "name": "h5",
+            "tag": "h5",
+            "end": "/h5"
+        },
+        {
+            "name": "h6",
+            "tag": "h6",
+            "end": "/h6"
+        },
+        {
             "name": "head",
             "tag": "head",
             "end": "/head"
         },
         {
+            "name": "header",
+            "tag": "header",
+            "end": "/header"
+        },
+        {
+            "name": "html",
+            "tag": "html",
+            "end": "/html"
+        },
+        {
+            "name": "img",
+            "tag": "img",
+            "end": ""
+        },
+        {
+            "name": "input",
+            "tag": "input",
+            "end": ""
+        },
+        {
+            "name": "label",
+            "tag": "label",
+            "end": "/label"
+        },
+        {
+            "name": "li",
+            "tag": "li",
+            "end": "/li"
+        },
+        {
+            "name": "link",
+            "tag": "link",
+            "end": ""
+        },
+        {
+            "name": "meta",
+            "tag": "meta",
+            "end": ""
+        },
+        {
+            "name": "nav",
+            "tag": "nav",
+            "end": "/nav"
+        },
+        {
+            "name": "p",
+            "tag": "p",
+            "end": "/p"
+        },
+        {
+            "name": "script",
+            "tag": "script",
+            "end": "/script"
+        },
+        {
+            "name": "section",
+            "tag": "section",
+            "end": "/section"
+        },
+        {
+            "name": "style",
+            "tag": "style",
+            "end": "/style"
+        },
+        {
+            "name": "textarea",
+            "tag": "textarea",
+            "end": "/textarea"
+        },
+        {
             "name": "title",
             "tag": "title",
             "end": "/title"
+        },
+        {
+            "name": "ul",
+            "tag": "ul",
+            "end": "/ul"
         }
     ]
 }
