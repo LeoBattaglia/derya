@@ -30,4 +30,18 @@ export class Coder{
         }
         return undefined;
     }
+    getTagEnd(name:string):string{
+        switch(this.mode){
+            case this.mode_html:
+                return html.getTagEnd(name);
+        }
+        return undefined;
+    }
+    getTagName(name:string):string{
+        switch(this.mode){
+            case this.mode_html:
+                return html.getTagName(name);
+        }
+        return undefined;
+    }
 }

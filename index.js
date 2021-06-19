@@ -25,6 +25,20 @@ var Coder = /** @class */ (function () {
         }
         return undefined;
     };
+    Coder.prototype.getTagEnd = function (name) {
+        switch (this.mode) {
+            case this.mode_html:
+                return html.getTagEnd(name);
+        }
+        return undefined;
+    };
+    Coder.prototype.getTagName = function (name) {
+        switch (this.mode) {
+            case this.mode_html:
+                return html.getTagName(name);
+        }
+        return undefined;
+    };
     return Coder;
 }());
 exports.Coder = Coder;
