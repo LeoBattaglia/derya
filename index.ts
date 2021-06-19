@@ -1,18 +1,31 @@
 //Constants
 import {SourceCode} from "./lib/sourcecode";
+import exp = require("constants");
 
 const html = require("./lib/html");
 export const sourcecode = require("./lib/sourcecode");
+
+//Functions
+export function getModeCSS(){
+    return 1;
+}
+export function getModeHTML(){
+    return 2;
+}
+export function getModeJSON(){
+    return 3;
+}
+export function getModeSVG(){
+    return 4;
+}
+export function getModeXML(){
+    return 5;
+}
 
 //Classes
 export class Coder{
     //Declarations
     mode:number;
-    mode_css:number = 1;
-    mode_html:number = 2;
-    mode_json:number = 3;
-    mode_svg:number = 4;
-    mode_xml:number = 5;
 
     //Constructor
     constructor(mode:number){
@@ -25,23 +38,27 @@ export class Coder{
     }
     getTag(name:string):string{
         switch(this.mode){
-            case this.mode_html:
+            case getModeHTML():
                 return html.getTag(name);
         }
         return undefined;
     }
     getTagEnd(name:string):string{
         switch(this.mode){
-            case this.mode_html:
+            case getModeHTML():
                 return html.getTagEnd(name);
         }
         return undefined;
     }
     getTagName(name:string):string{
         switch(this.mode){
-            case this.mode_html:
+            case getModeHTML():
                 return html.getTagName(name);
         }
         return undefined;
     }
+}
+
+export class Mode{
+
 }
