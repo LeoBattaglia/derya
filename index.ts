@@ -1,9 +1,6 @@
-//Constants
+//Imports & Constants
 import {SourceCode} from "./lib/sourcecode";
-//import exp = require("constants");
-
 const html = require("./lib/html");
-//const sourcecode = require("./lib/sourcecode");
 
 //Functions
 export function getModeCSS(){
@@ -50,8 +47,4 @@ export class Coder{
         }
         return undefined;
     }
-}
-
-export class Mode{
-
 }

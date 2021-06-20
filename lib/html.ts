@@ -6,7 +6,11 @@ export const sourcecode = require("./sourcecode");
 export function getTag(name:string):string{
     for(let tag of html.tags){
         if(tag.name.toLowerCase() === name.toLowerCase()){
-            return "<" + tag.name + ">";
+            if(tag.name.toLowerCase() === "doctype"){
+                return "<!DOCTYPE html>";
+            }else{
+                return "<" + tag.name + ">";
+            }
         }
     }
     return undefined;

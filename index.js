@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Mode = exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = void 0;
-//Constants
+exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = void 0;
+//Imports & Constants
 var sourcecode_1 = require("./lib/sourcecode");
-//import exp = require("constants");
 var html = require("./lib/html");
-//const sourcecode = require("./lib/sourcecode");
 //Functions
 function getModeCSS() {
     return 1;
@@ -54,10 +52,4 @@ var Coder = /** @class */ (function () {
     return Coder;
 }());
 exports.Coder = Coder;
-var Mode = /** @class */ (function () {
-    function Mode() {
-    }
-    return Mode;
-}());
-exports.Mode = Mode;
 //# sourceMappingURL=index.js.map
