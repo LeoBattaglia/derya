@@ -1,8 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Mode = exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = exports.sourcecode = void 0;
+exports.Mode = exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = void 0;
+//Constants
+var sourcecode_1 = require("./lib/sourcecode");
+//import exp = require("constants");
 var html = require("./lib/html");
-exports.sourcecode = require("./lib/sourcecode");
+//const sourcecode = require("./lib/sourcecode");
 //Functions
 function getModeCSS() {
     return 1;
@@ -32,7 +35,7 @@ var Coder = /** @class */ (function () {
     }
     //Methods
     Coder.prototype.getNewSourceCode = function () {
-        return new exports.sourcecode.SourceCode();
+        return new sourcecode_1.SourceCode();
     };
     Coder.prototype.getTag = function (name) {
         switch (this.mode) {
@@ -45,13 +48,6 @@ var Coder = /** @class */ (function () {
         switch (this.mode) {
             case getModeHTML():
                 return html.getTagEnd(name);
-        }
-        return undefined;
-    };
-    Coder.prototype.getTagName = function (name) {
-        switch (this.mode) {
-            case getModeHTML():
-                return html.getTagName(name);
         }
         return undefined;
     };

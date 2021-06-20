@@ -1,11 +1,10 @@
 //Constants
-const html = require("./json/html.json");
+const html = require("./ref/html/tags.json");
 export const sourcecode = require("./sourcecode");
 
 //Functions
 export function getTag(name:string):string{
     for(let tag of html.tags){
-        console.log("FFF: " + tag.name + " || " + name);
         if(tag.name === name){
             return "<" + tag.tag + ">";
         }
@@ -16,16 +15,11 @@ export function getTag(name:string):string{
 export function getTagEnd(name:string):string{
     for(let tag of html.tags){
         if(tag.name === name){
-            return "<" + tag.end + ">";
-        }
-    }
-    return undefined;
-}
-
-export function getTagName(name:string):string{
-    for(let tag of html.tags){
-        if(tag.name === name){
-            return tag.name;
+            if(tag.end === "/"){
+                return "</" + tag.name + ">";
+            }else{
+                return tag.end;
+            }
         }
     }
     return undefined;

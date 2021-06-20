@@ -1,9 +1,9 @@
 //Constants
 import {SourceCode} from "./lib/sourcecode";
-import exp = require("constants");
+//import exp = require("constants");
 
 const html = require("./lib/html");
-export const sourcecode = require("./lib/sourcecode");
+//const sourcecode = require("./lib/sourcecode");
 
 //Functions
 export function getModeCSS(){
@@ -34,7 +34,7 @@ export class Coder{
 
     //Methods
     getNewSourceCode():SourceCode{
-        return new sourcecode.SourceCode();
+        return new SourceCode();
     }
     getTag(name:string):string{
         switch(this.mode){
@@ -47,13 +47,6 @@ export class Coder{
         switch(this.mode){
             case getModeHTML():
                 return html.getTagEnd(name);
-        }
-        return undefined;
-    }
-    getTagName(name:string):string{
-        switch(this.mode){
-            case getModeHTML():
-                return html.getTagName(name);
         }
         return undefined;
     }
