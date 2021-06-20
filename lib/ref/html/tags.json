@@ -254,7 +254,7 @@
         },
         {
             "name":"meta",
-            "end":"/"
+            "end":">"
         },
         {
             "name":"meter",
