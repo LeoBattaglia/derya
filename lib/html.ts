@@ -6,7 +6,7 @@ export const sourcecode = require("./sourcecode");
 export function getTag(name:string):string{
     for(let tag of html.tags){
         if(tag.name === name){
-            return "<" + tag.tag + ">";
+            return "<" + tag.name + ">";
         }
     }
     return undefined;
