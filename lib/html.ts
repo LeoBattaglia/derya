@@ -5,7 +5,7 @@ export const sourcecode = require("./sourcecode");
 //Functions
 export function getTag(name:string):string{
     for(let tag of html.tags){
-        if(tag.name === name){
+        if(tag.name.toLowerCase() === name.toLowerCase()){
             return "<" + tag.name + ">";
         }
     }
@@ -14,7 +14,7 @@ export function getTag(name:string):string{
 
 export function getTagEnd(name:string):string{
     for(let tag of html.tags){
-        if(tag.name === name){
+        if(tag.name.toLowerCase() === name.toLowerCase()){
             if(tag.end === "/"){
                 return "</" + tag.name + ">";
             }else{
