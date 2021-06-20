@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = exports.SourceCode = void 0;
+exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = exports.SourceCode = exports.HTMLTag = void 0;
 //Imports & Constants
+var htmltag_1 = require("./lib/htmltag");
+Object.defineProperty(exports, "HTMLTag", { enumerable: true, get: function () { return htmltag_1.HTMLTag; } });
 var sourcecode_1 = require("./lib/sourcecode");
 Object.defineProperty(exports, "SourceCode", { enumerable: true, get: function () { return sourcecode_1.SourceCode; } });
 var sourcecode_2 = require("./lib/sourcecode");

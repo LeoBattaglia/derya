@@ -1,6 +1,5 @@
 //Constants
 const html = require("./ref/html/tags.json");
-export const sourcecode = require("./sourcecode");
 
 //Functions
 export function getTag(name:string):string{

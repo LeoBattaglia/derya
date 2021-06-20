@@ -1,4 +1,5 @@
 //Imports & Constants
+export {HTMLTag as HTMLTag} from "./lib/htmltag";
 export {SourceCode as SourceCode} from "./lib/sourcecode";
 import {SourceCode} from "./lib/sourcecode";
 const html = require("./lib/html");
