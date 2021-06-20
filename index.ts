@@ -2,6 +2,9 @@
 import {SourceCode} from "./lib/sourcecode";
 const html = require("./lib/html");
 
+//Exports
+export {SourceCode} from "./lib/sourcecode";
+
 //Functions
 export function getModeCSS(){
     return 1;

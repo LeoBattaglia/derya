@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = void 0;
+exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = exports.SourceCode = void 0;
 //Imports & Constants
 var sourcecode_1 = require("./lib/sourcecode");
 var html = require("./lib/html");
+//Exports
+var sourcecode_2 = require("./lib/sourcecode");
+Object.defineProperty(exports, "SourceCode", { enumerable: true, get: function () { return sourcecode_2.SourceCode; } });
 //Functions
 function getModeCSS() {
     return 1;
