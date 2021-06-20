@@ -1,9 +1,7 @@
 //Imports & Constants
+export {SourceCode} from "./lib/sourcecode";
 import {SourceCode} from "./lib/sourcecode";
 const html = require("./lib/html");
-
-//Exports
-export {SourceCode} from "./lib/sourcecode";
 
 //Functions
 export function getModeCSS(){

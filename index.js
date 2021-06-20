@@ -3,10 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Coder = exports.getModeXML = exports.getModeSVG = exports.getModeJSON = exports.getModeHTML = exports.getModeCSS = exports.SourceCode = void 0;
 //Imports & Constants
 var sourcecode_1 = require("./lib/sourcecode");
-var html = require("./lib/html");
-//Exports
+Object.defineProperty(exports, "SourceCode", { enumerable: true, get: function () { return sourcecode_1.SourceCode; } });
 var sourcecode_2 = require("./lib/sourcecode");
-Object.defineProperty(exports, "SourceCode", { enumerable: true, get: function () { return sourcecode_2.SourceCode; } });
+var html = require("./lib/html");
 //Functions
 function getModeCSS() {
     return 1;
@@ -36,7 +35,7 @@ var Coder = /** @class */ (function () {
     }
     //Methods
     Coder.prototype.getNewSourceCode = function () {
-        return new sourcecode_1.SourceCode();
+        return new sourcecode_2.SourceCode();
     };
     Coder.prototype.getTag = function (name) {
         switch (this.mode) {
