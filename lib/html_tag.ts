@@ -1,5 +1,6 @@
 //Import
 import {HTMLTagParameter} from "./html_tag_parameter";
+import * as sys from "samara"
 
 //Class
 export class HTMLTag{
@@ -18,18 +19,23 @@ export class HTMLTag{
     }
 
     //Methods
-    addPara(para:HTMLTagParameter):void{
-        if(!this.closed){
-            this.paras.push(para);
+    addPara(name:string, value:string):void{
+        if(!this.closed && !sys.isNull(name)){
+            this.paras.push(new HTMLTagParameter(name, value));
         }
     }
+
     getTag(){
         let tag:string = this.name;
         if(this._closed){
             tag = "/" + tag;
         }else{
             for(let para of this.paras){
-                tag += " " + para.name + "=\"" + para.value + "\"";
+                if(sys.isNull(para.value)){
+                    tag += " " + para.name;
+                }else{
+                    tag += " " + para.name + "=\"" + para.value + "\"";
+                }
             }
         }
         return "<" + tag + ">"
@@ -39,6 +45,7 @@ export class HTMLTag{
     get closed():Boolean{
         return this._closed;
     }
+
     get id():number{
         return this._id;
     }
@@ -55,6 +62,7 @@ export class HTMLTag{
     set closed(value:Boolean){
         this._closed = value;
     }
+
     set id(value:number){
         this._id = value;
     }
