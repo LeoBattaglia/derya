@@ -1,7 +1,5 @@
 //Imports
-import {HTMLContent} from "./html_content";
-import {HTMLTag} from "./html_tag";
-import {HTMLTagParameter} from "./html_tag_parameter";
+import {HTMLElement} from "./html_element";
 import * as sys from "samara";
 import * as tags from "./ref/html/tags.json";
 
@@ -17,28 +15,32 @@ export class HTMLSourceCode{
     }
 
     //Methods
-    addComment(comment:string):HTMLContent{
+    addBR():HTMLElement{
+        return this.addTagUnsafe(new HTMLElement(this.getNewID(), "br", true, false));
+    }
+
+    addComment(comment:string):HTMLElement{
         if(!sys.isNull(comment)){
             return this.addContent("<!-- " + comment + " -->")
         }
         return undefined;
     }
 
-    addContent(content:string):HTMLContent{
+    addContent(content:string):HTMLElement{
         if(!sys.isNull(content)){
-            let con = new HTMLContent(this.getNewID(), content);
+            let con = new HTMLElement(this.getNewID(), content, false, undefined);
             this.sc.push(con);
             return con;
         }
         return undefined;
     }
 
-    addDoctype():HTMLTag{
-        return this.addTagUnsafe(new HTMLTag(this.getNewID(), "!DOCTYPE html", false));
+    addDoctype():HTMLElement{
+        return this.addTagUnsafe(new HTMLElement(this.getNewID(), "!DOCTYPE html", true, false));
     }
 
-    addMeta(name:string, content:string):HTMLTag{
-        let tag:HTMLTag = new HTMLTag(this.getNewID(), "meta", false);
+    addMeta(name:string, content:string):HTMLElement{
+        let tag:HTMLElement = new HTMLElement(this.getNewID(), "meta", true, false);
         if(!sys.isNull(name) && !sys.isNull(content)){
             tag.addPara("name", name);
             tag.addPara("content", content);
@@ -52,34 +54,30 @@ export class HTMLSourceCode{
         }
     }
 
-    addTag(str:string):HTMLTag{
+    addTag(str:string):HTMLElement{
         if(this.isTag(str)){
-            return this.addTagUnsafe(new HTMLTag(this.getNewID(), str, false));
+            return this.addTagUnsafe(new HTMLElement(this.getNewID(), str, true, false));
         }
         return undefined;
     }
 
-    addTagUnsafe(tag:HTMLTag):HTMLTag{
+    addTagUnsafe(tag:HTMLElement):HTMLElement{
         this.sc.push(tag);
         return tag;
     }
 
-    closeTag(tag:string):HTMLTag{
+    closeTag(tag:string):HTMLElement{
         if(this.isClosedTag(tag)){
-            return this.addTagUnsafe(new HTMLTag(this.getNewID(), tag, false));
+            return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, true));
         }
         return undefined;
     }
 
-    closeTagUnsafe(tag:string):HTMLTag{
-        return this.addTagUnsafe(new HTMLTag(this.getNewID(), tag, true));
+    closeTagUnsafe(tag:string):HTMLElement{
+        return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, true));
     }
 
-    private getNewID():number{
-        return this.ids++;
-    }
-
-    getTag(id:number):HTMLTag{
+    getElement(id:number):HTMLElement{
         for(let element of this._sc){
             if(element.id === id){
                 return element;
@@ -88,7 +86,19 @@ export class HTMLSourceCode{
         return undefined;
     }
 
-    private isClosedTag(tag:string):Boolean{
+    getHTML():string{
+        let html:string = "";
+        for(let element of this.sc){
+            html += element.getContent();
+        }
+        return html;
+    }
+
+    private getNewID():number{
+        return this.ids++;
+    }
+
+    isClosedTag(tag:string):Boolean{
         for(let element of tags.tags){
             if(element.name === tag && element.end === "/"){
                 return true;
@@ -97,7 +107,7 @@ export class HTMLSourceCode{
         return false;
     }
 
-    private isTag(tag:string):Boolean{
+    isTag(tag:string):Boolean{
         for(let element of tags.tags){
             if(element.name === tag){
                 return true;
@@ -106,15 +116,15 @@ export class HTMLSourceCode{
         return false;
     }
 
-    openTag(tag:string):HTMLTag{
+    openTag(tag:string):HTMLElement{
         if(this.isTag(tag)){
-            return this.addTagUnsafe(new HTMLTag(this.getNewID(), tag, false));
+            return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, false));
         }
         return undefined;
     }
 
-    openTagUnsafe(tag:string):HTMLTag{
-        return this.addTagUnsafe(new HTMLTag(this.getNewID(), tag, false));
+    openTagUnsafe(tag:string):HTMLElement{
+        return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, false));
     }
 
     //Get-Methods
