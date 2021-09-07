@@ -18,6 +18,7 @@ export class HTMLElement{
         this.content = content;
         this.id = id;
         this.attributes = [];
+        this.styles = [];
         this.tag = tag;
     }
 
@@ -103,8 +104,9 @@ export class HTMLElement{
     set id(value:number){
         this._id = value;
     }
+
     set styles(styles:HTMLTagAttribute[]){
-        this._attributes = styles;
+        this._styles = styles;
     }
 
     set tag(value:Boolean){
