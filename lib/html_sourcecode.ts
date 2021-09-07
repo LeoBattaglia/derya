@@ -1,5 +1,7 @@
 //Imports
 import {HTMLElement} from "./html_element";
+import {ObjectContainer} from "samara";
+import {validatePage} from "./html_validation";
 import * as sys from "samara";
 import * as tags from "./ref/html/tags.json";
 
@@ -7,7 +9,7 @@ import * as tags from "./ref/html/tags.json";
 export class HTMLSourceCode{
     //Declarations
     private _ids:number = 0;
-    private _sc:any[];
+    private _sc:HTMLElement[];
 
     //Constructor
     constructor(){
@@ -16,7 +18,7 @@ export class HTMLSourceCode{
 
     //Methods
     addBR():HTMLElement{
-        return this.addTagUnsafe(new HTMLElement(this.getNewID(), "br", true, false));
+        return this.addElement(new HTMLElement(this.getNewID(), "br", true, false));
     }
 
     addComment(comment:string):HTMLElement{
@@ -27,54 +29,55 @@ export class HTMLSourceCode{
     }
 
     addContent(content:string):HTMLElement{
+        content = sys.removeTags(content);
         if(!sys.isNull(content)){
-            let con = new HTMLElement(this.getNewID(), content, false, undefined);
-            this.sc.push(con);
-            return con;
+            return this.addElement(new HTMLElement(this.getNewID(), content, false, undefined));
         }
         return undefined;
     }
 
     addDoctype():HTMLElement{
-        return this.addTagUnsafe(new HTMLElement(this.getNewID(), "!DOCTYPE html", true, false));
+        return this.addElement(new HTMLElement(this.getNewID(), "!DOCTYPE html", true, false));
+    }
+
+    private addElement(element:HTMLElement):HTMLElement{
+        this.sc.push(element);
+        return element;
     }
 
     addMeta(name:string, content:string):HTMLElement{
         let tag:HTMLElement = new HTMLElement(this.getNewID(), "meta", true, false);
         if(!sys.isNull(name) && !sys.isNull(content)){
-            tag.addPara("name", name);
-            tag.addPara("content", content);
+            tag.addAttribute("name", name.toLowerCase());
+            tag.addAttribute("content", content);
         }
-        return this.addTagUnsafe(tag);
+        return this.addElement(tag);
     }
 
     addSourceCode(sc:HTMLSourceCode):void{
-        for(let element of sc.sc){
-            this.sc.push(element);
-        }
+        this.sc.push(sc.sc);
     }
 
-    addTag(str:string):HTMLElement{
-        if(this.isTag(str)){
-            return this.addTagUnsafe(new HTMLElement(this.getNewID(), str, true, false));
+    addTag(tag:string):HTMLElement{
+        if(this.isTag(tag.toLowerCase())){
+            return this.addTagUnsafe(tag);
         }
         return undefined;
     }
 
-    addTagUnsafe(tag:HTMLElement):HTMLElement{
-        this.sc.push(tag);
-        return tag;
+    private addTagUnsafe(tag:string):HTMLElement{
+        return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
     }
 
     closeTag(tag:string):HTMLElement{
-        if(this.isClosedTag(tag)){
-            return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, true));
+        if(this.isClosedTag(tag.toLowerCase())){
+            return this.closeTagUnsafe(tag);
         }
         return undefined;
     }
 
     closeTagUnsafe(tag:string):HTMLElement{
-        return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, true));
+        return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, true));
     }
 
     getElement(id:number):HTMLElement{
@@ -88,8 +91,17 @@ export class HTMLSourceCode{
 
     getHTML():string{
         let html:string = "";
-        for(let element of this.sc){
-            html += element.getContent();
+        let errors:ObjectContainer = validatePage(this.sc);
+        if(errors.getLength() > 0){
+            for(let error of errors.objects){
+                html += "ERROR: " + error.object + "!\r\n";
+            }
+        }else{
+
+            //TODO: Generate String
+
+            //TODO: Format String
+
         }
         return html;
     }
@@ -100,7 +112,7 @@ export class HTMLSourceCode{
 
     isClosedTag(tag:string):Boolean{
         for(let element of tags.tags){
-            if(element.name === tag && element.end === "/"){
+            if(element.name === tag.toLowerCase() && element.closed){
                 return true;
             }
         }
@@ -109,7 +121,7 @@ export class HTMLSourceCode{
 
     isTag(tag:string):Boolean{
         for(let element of tags.tags){
-            if(element.name === tag){
+            if(element.name === tag.toLowerCase()){
                 return true;
             }
         }
@@ -117,14 +129,14 @@ export class HTMLSourceCode{
     }
 
     openTag(tag:string):HTMLElement{
-        if(this.isTag(tag)){
-            return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, false));
+        if(this.isClosedTag(tag.toLowerCase())){
+            return this.openTagUnsafe(tag);
         }
         return undefined;
     }
 
     openTagUnsafe(tag:string):HTMLElement{
-        return this.addTagUnsafe(new HTMLElement(this.getNewID(), tag, true, false));
+        return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
     }
 
     //Get-Methods

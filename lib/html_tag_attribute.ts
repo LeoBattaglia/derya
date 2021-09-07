@@ -1,5 +1,5 @@
 //Class
-export class HTMLTagParameter{
+export class HTMLTagAttribute{
     //Declarations
     _name:string;
     _value:string;

@@ -1,14 +1,14 @@
 //Import
-import {HTMLTagParameter} from "./html_tag_parameter";
+import {HTMLTagAttribute} from "./html_tag_attribute";
 import * as sys from "samara"
 
 //Class
 export class HTMLElement{
     //Declarations
+    private _attributes:HTMLTagAttribute[];
     private _closed:Boolean;
     private _content:string;
     private _id:number;
-    private _paras:HTMLTagParameter[];
     private _tag:Boolean;
 
     //Constructor
@@ -16,14 +16,14 @@ export class HTMLElement{
         this.closed = closed;
         this.content = content;
         this.id = id;
-        this.paras = [];
+        this.attributes = [];
         this.tag = tag;
     }
 
     //Methods
-    addPara(name:string, value:string):void{
+    addAttribute(name:string, value:string):void{
         if(this.tag && !this.closed && !sys.isNull(name)){
-            this.paras.push(new HTMLTagParameter(name, value));
+            this.attributes.push(new HTMLTagAttribute(name, value));
         }
     }
 
@@ -35,11 +35,11 @@ export class HTMLElement{
                 return  "</" + this.content + ">";
             }else{
                 let tag:string = this.content;
-                for(let para of this.paras){
-                    if(sys.isNull(para.value)){
-                        tag += " " + para.name;
+                for(let attribute of this.attributes){
+                    if(sys.isNull(attribute.value)){
+                        tag += " " + attribute.name;
                     }else{
-                        tag += " " + para.name + "=\"" + para.value + "\"";
+                        tag += " " + attribute.name + "=\"" + attribute.value + "\"";
                     }
                 }
                 return "<" + tag + ">";
@@ -48,6 +48,10 @@ export class HTMLElement{
     }
 
     //Get-Methods
+    get attributes():HTMLTagAttribute[]{
+        return this._attributes;
+    }
+
     get closed():Boolean{
         return this._closed;
     }
@@ -60,15 +64,17 @@ export class HTMLElement{
         return this._id;
     }
 
-    get paras():HTMLTagParameter[]{
-        return this._paras;
-    }
-
     get tag():Boolean{
         return this._tag;
     }
 
     //Set-Methods
+    set attributes(attributes:HTMLTagAttribute[]){
+        if(!this.closed){
+            this._attributes = attributes;
+        }
+    }
+
     set closed(value:Boolean){
         this._closed = value;
     }
@@ -79,12 +85,6 @@ export class HTMLElement{
 
     set id(value:number){
         this._id = value;
-    }
-
-    set paras(paras:HTMLTagParameter[]){
-        if(!this.closed){
-            this._paras = paras;
-        }
     }
 
     set tag(value:Boolean){
