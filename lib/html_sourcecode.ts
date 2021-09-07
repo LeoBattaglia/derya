@@ -55,7 +55,9 @@ export class HTMLSourceCode{
     }
 
     addSourceCode(sc:HTMLSourceCode):void{
-        this.sc.push(sc.sc);
+        for(let element of sc.sc){
+            this.sc.push(element);
+        }
     }
 
     addTag(tag:string):HTMLElement{
@@ -154,7 +156,7 @@ export class HTMLSourceCode{
         return this._ids;
     }
 
-    get sc():any[]{
+    get sc():HTMLElement[]{
         return this._sc;
     }
 
@@ -163,7 +165,7 @@ export class HTMLSourceCode{
         this._ids = value;
     }
 
-    set sc(values:any[]){
+    set sc(values:HTMLElement[]){
         this._sc = values;
     }
 }
