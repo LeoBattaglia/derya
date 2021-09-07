@@ -97,11 +97,21 @@ export class HTMLSourceCode{
                 html += "ERROR: " + error.object + "!\r\n";
             }
         }else{
-
-            //TODO: Generate String
-
-            //TODO: Format String
-
+            //Generate format String
+            let lvl:number = 0;
+            for(let element of this._sc){
+                if(element.tag && this.isClosedTag(element.content) && element.closed){
+                    lvl--;
+                }
+                let tabs:string = "";
+                for(let i=0; i<lvl; i++){
+                    tabs += "\t";
+                }
+                html += tabs + element.getContent() + "\r\n";
+                if(element.tag && this.isClosedTag(element.content) && !element.closed){
+                    lvl++;
+                }
+            }
         }
         return html;
     }
