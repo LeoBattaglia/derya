@@ -21,6 +21,14 @@ export class HTMLSourceCode{
         return this.addElement(new HTMLElement(this.getNewID(), "br", true, false));
     }
 
+    addCharset(charset:string):HTMLElement{
+        let tag:HTMLElement = new HTMLElement(this.getNewID(), "meta", true, false);
+        if(!sys.isNull(charset)){
+            tag.addAttribute("charset", charset.toUpperCase());
+        }
+        return this.addElement(tag);
+    }
+
     addComment(comment:string):HTMLElement{
         if(!sys.isNull(comment)){
             return this.addContent("<!-- " + comment + " -->")
