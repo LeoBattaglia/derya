@@ -69,6 +69,18 @@ function validateBody(){
     getTagPosition("body", true) > getTagPosition("html", true) + 1? errors.push(getTagPosition("body", true), "Body-Closed-Tag is on wrong Position") : undefined;
 }
 
+function validateCharset():void{
+
+    //TODO: All
+
+}
+
+function validateContentLanguage():void{
+
+    //TODO: All
+
+}
+
 function validateDoctype():void{
     countTag("!DOCTYPE html", true) > 0? errors.push(id_default, "Document contains closed Doctype") : undefined;
     countTag("!DOCTYPE html", false) < 1? errors.push(id_default, "Document does not contain Doctype") : undefined;
@@ -101,14 +113,11 @@ export function validatePage(src:HTMLElement[]):ObjectContainer{
     validateDoctype();
     validateHTML();
     validateHead();
-    validateBody();
     validateTitle();
-
-    //Charset
-    //ContentLanguage
-    //Viewport
-
-
+    validateBody();
+    validateCharset();
+    validateContentLanguage();
+    validateViewport();
     validateTags();
     return errors;
 }
@@ -127,4 +136,10 @@ function validateTitle():void{
     countTag("title", true) > 1? errors.push(id_default, "Document contains more than one Title-Closed-Tag") : undefined;
     getTagPosition("title", true) < getTagPosition("title", false) + 1? errors.push(getTagPosition("title", true), "Title-Closed-Tag is on wrong Position") : undefined;
     getTagPosition("title", true) > getTagPosition("head", true) + 1? errors.push(getTagPosition("title", true), "Title-Closed-Tag is on wrong Position") : undefined;
+}
+
+function validateViewport():void{
+
+    //TODO: All
+
 }

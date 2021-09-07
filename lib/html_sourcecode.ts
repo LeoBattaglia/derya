@@ -106,21 +106,20 @@ export class HTMLSourceCode{
             for(let error of errors.objects){
                 html += "ERROR: " + error.object + "!\r\n";
             }
-        }else{
-            //Generate format String
-            let lvl:number = 0;
-            for(let element of this._sc){
-                if(element.tag && isClosedTag(element.content) && element.closed){
-                    lvl--;
-                }
-                let tabs:string = "";
-                for(let i=0; i<lvl; i++){
-                    tabs += "\t";
-                }
-                html += tabs + element.getContent() + "\r\n";
-                if(element.tag && isClosedTag(element.content) && !element.closed){
-                    lvl++;
-                }
+        }
+        //Generate format String
+        let lvl:number = 0;
+        for(let element of this._sc){
+            if(element.tag && isClosedTag(element.content) && element.closed){
+                lvl--;
+            }
+            let tabs:string = "";
+            for(let i=0; i<lvl; i++){
+                tabs += "\t";
+            }
+            html += tabs + element.getContent() + "\r\n";
+            if(element.tag && isClosedTag(element.content) && !element.closed){
+                lvl++;
             }
         }
         return html;
