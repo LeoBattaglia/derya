@@ -1,7 +1,7 @@
 //Imports
 import {HTMLElement} from "./html_element";
 import {ObjectContainer} from "samara";
-import {validatePage} from "./html_validation";
+import {isClosedTag, isTag, validatePage} from "./html_validation";
 import * as sys from "samara";
 import * as tags from "./ref/html/tags.json";
 
@@ -61,7 +61,7 @@ export class HTMLSourceCode{
     }
 
     addTag(tag:string):HTMLElement{
-        if(this.isTag(tag.toLowerCase())){
+        if(isTag(tag.toLowerCase())){
             return this.addTagUnsafe(tag);
         }
         return undefined;
@@ -72,7 +72,7 @@ export class HTMLSourceCode{
     }
 
     closeTag(tag:string):HTMLElement{
-        if(this.isClosedTag(tag.toLowerCase())){
+        if(isClosedTag(tag.toLowerCase())){
             return this.closeTagUnsafe(tag);
         }
         return undefined;
@@ -102,7 +102,7 @@ export class HTMLSourceCode{
             //Generate format String
             let lvl:number = 0;
             for(let element of this._sc){
-                if(element.tag && this.isClosedTag(element.content) && element.closed){
+                if(element.tag && isClosedTag(element.content) && element.closed){
                     lvl--;
                 }
                 let tabs:string = "";
@@ -110,7 +110,7 @@ export class HTMLSourceCode{
                     tabs += "\t";
                 }
                 html += tabs + element.getContent() + "\r\n";
-                if(element.tag && this.isClosedTag(element.content) && !element.closed){
+                if(element.tag && isClosedTag(element.content) && !element.closed){
                     lvl++;
                 }
             }
@@ -122,26 +122,8 @@ export class HTMLSourceCode{
         return this.ids++;
     }
 
-    isClosedTag(tag:string):Boolean{
-        for(let element of tags.tags){
-            if(element.name === tag.toLowerCase() && element.closed){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    isTag(tag:string):Boolean{
-        for(let element of tags.tags){
-            if(element.name === tag.toLowerCase()){
-                return true;
-            }
-        }
-        return false;
-    }
-
     openTag(tag:string):HTMLElement{
-        if(this.isClosedTag(tag.toLowerCase())){
+        if(isClosedTag(tag.toLowerCase())){
             return this.openTagUnsafe(tag);
         }
         return undefined;

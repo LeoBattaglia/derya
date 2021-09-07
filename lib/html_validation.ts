@@ -2,6 +2,7 @@
 import {HTMLSourceCode} from "./html_sourcecode";
 import {ObjectContainer} from "samara";
 import {HTMLElement} from "./html_element";
+import * as tags from "./ref/html/tags.json";
 
 //Constants
 const id_default:number = -1;
@@ -38,6 +39,24 @@ function getTagPosition(tag:string, closed:Boolean):number{
         pos++;
     }
     return -1;
+}
+
+export function isClosedTag(tag:string):Boolean{
+    for(let element of tags.tags){
+        if(element.name === tag.toLowerCase() && element.closed){
+            return true;
+        }
+    }
+    return false;
+}
+
+export function isTag(tag:string):Boolean{
+    for(let element of tags.tags){
+        if(element.name === tag.toLowerCase() || tag === "!DOCTYPE html"){
+            return true;
+        }
+    }
+    return false;
 }
 
 function validateBody(){
@@ -83,8 +102,8 @@ export function validatePage(src:HTMLElement[]):ObjectContainer{
     validateHTML();
     validateHead();
     validateBody();
+    validateTitle();
 
-    //Title
     //Charset
     //ContentLanguage
     //Viewport
@@ -95,7 +114,17 @@ export function validatePage(src:HTMLElement[]):ObjectContainer{
 }
 
 function validateTags():void{
+    for(let element of sc){
+        element.tag && !isTag(element.content)? errors.push(id_default, "Tag is not valid: " + element.content) : undefined;
+    }
+}
 
-    //TODO: All
-
+function validateTitle():void{
+    countTag("title", false) < 1? errors.push(id_default, "Document does not contain Title-Tag") : undefined;
+    countTag("title", false) > 1? errors.push(id_default, "Document contains more than one Title-Tag") : undefined;
+    getTagPosition("title", false) !== getTagPosition("head", false) + 1? errors.push(getTagPosition("title", false), "Title-Tag is on wrong Position") : undefined;
+    countTag("title", true) < 1? errors.push(id_default, "Document does not contain Title-Closed-Tag") : undefined;
+    countTag("title", true) > 1? errors.push(id_default, "Document contains more than one Title-Closed-Tag") : undefined;
+    getTagPosition("title", true) < getTagPosition("title", false) + 1? errors.push(getTagPosition("title", true), "Title-Closed-Tag is on wrong Position") : undefined;
+    getTagPosition("title", true) > getTagPosition("head", true) + 1? errors.push(getTagPosition("title", true), "Title-Closed-Tag is on wrong Position") : undefined;
 }
