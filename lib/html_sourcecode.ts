@@ -25,8 +25,9 @@ export class HTMLSourceCode{
         let tag:HTMLElement = new HTMLElement(this.getNewID(), "meta", true, false);
         if(!sys.isNull(charset)){
             tag.addAttribute("charset", charset.toUpperCase());
+            return this.addElement(tag);
         }
-        return this.addElement(tag);
+        return undefined;
     }
 
     addComment(comment:string):HTMLElement{
@@ -58,8 +59,9 @@ export class HTMLSourceCode{
         if(!sys.isNull(name) && !sys.isNull(content)){
             tag.addAttribute("name", name.toLowerCase());
             tag.addAttribute("content", content);
+            return this.addElement(tag);
         }
-        return this.addElement(tag);
+        return undefined;
     }
 
     addSourceCode(sc:HTMLSourceCode):void{

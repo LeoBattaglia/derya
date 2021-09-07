@@ -9,6 +9,7 @@ export class HTMLElement{
     private _closed:Boolean;
     private _content:string;
     private _id:number;
+    private _styles:HTMLTagAttribute[];
     private _tag:Boolean;
 
     //Constructor
@@ -27,6 +28,12 @@ export class HTMLElement{
         }
     }
 
+    addStyle(name:string, value:string):void{
+        if(!sys.isNull(name) && !sys.isNull(value)){
+            this.styles.push(new HTMLTagAttribute(name, value));
+        }
+    }
+
     getContent():string{
         if(!this.tag){
             return this.content;
@@ -41,6 +48,13 @@ export class HTMLElement{
                     }else{
                         tag += " " + attribute.name + "=\"" + attribute.value + "\"";
                     }
+                }
+                if(this.styles.length > 0){
+                    tag += " style=\"";
+                    for(let style of this.styles){
+                        tag += " " + style.name + ": " + style.value + ";";
+                    }
+                    tag += "\"";
                 }
                 return "<" + tag + ">";
             }
@@ -62,6 +76,9 @@ export class HTMLElement{
 
     get id():number{
         return this._id;
+    }
+    get styles():HTMLTagAttribute[]{
+        return this._styles;
     }
 
     get tag():Boolean{
@@ -85,6 +102,9 @@ export class HTMLElement{
 
     set id(value:number){
         this._id = value;
+    }
+    set styles(styles:HTMLTagAttribute[]){
+        this._attributes = styles;
     }
 
     set tag(value:Boolean){
