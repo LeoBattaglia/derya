@@ -58,7 +58,7 @@ export class HTMLElement{
                         if(cnt > 0){
                             space = " ";
                         }
-                        tag += " " + style.name + ": " + style.value + ";";
+                        tag += space + style.name + ": " + style.value + ";";
                         cnt++;
                     }
                     tag += "\"";
