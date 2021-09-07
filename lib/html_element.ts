@@ -52,8 +52,14 @@ export class HTMLElement{
                 }
                 if(this.styles.length > 0){
                     tag += " style=\"";
+                    let cnt:number = 0;
+                    let space:string = "";
                     for(let style of this.styles){
+                        if(cnt > 0){
+                            space = " ";
+                        }
                         tag += " " + style.name + ": " + style.value + ";";
+                        cnt++;
                     }
                     tag += "\"";
                 }
