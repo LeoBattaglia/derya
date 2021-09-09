@@ -1,6 +1,6 @@
 {
     "name": "derya",
-    "version": "0.1.31",
+    "version": "0.1.32",
     "description": "Multi-Parser & Code-Generator, developed with TypeScript on node.js.",
     "main": "index.js",
     "scripts": {},

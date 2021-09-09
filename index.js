@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HTMLTagAttribute = exports.HTMLSourceCode = exports.HTMLElement = exports.html = void 0;
+exports.HTMLTagAttribute = exports.HTMLSourceCode = exports.HTMLElement = void 0;
 //Exports
-exports.html = require("./lib/html_functions");
 var html_element_1 = require("./lib/html_element");
 Object.defineProperty(exports, "HTMLElement", { enumerable: true, get: function () { return html_element_1.HTMLElement; } });
 var html_sourcecode_1 = require("./lib/html_sourcecode");

@@ -138,6 +138,22 @@ export class HTMLSourceCode{
         return undefined;
     }
 
+    openTagWithClass(tag:string, value:string):HTMLElement{
+        let element = this.openTag(tag);
+        if(element !== undefined){
+            element.addAttribute("class", value);
+        }
+        return element;
+    }
+
+    openTagWithID(tag:string, value:string):HTMLElement{
+        let element = this.openTag(tag);
+        if(element !== undefined){
+            element.addAttribute("id", value);
+        }
+        return element;
+    }
+
     openTagUnsafe(tag:string):HTMLElement{
         return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
     }
