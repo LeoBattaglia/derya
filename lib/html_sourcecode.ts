@@ -64,7 +64,7 @@ export class HTMLSourceCode{
     addInputDefault(type:string, id:string, name:string){
         let tag:HTMLElement = this.addTagUnsafe("input");
         tag.addAttributeType(type);
-        tag.addAttributeID(id);
+        tag.addAttributeId(id);
         tag.addAttributeName(name);
         return tag;
     }

@@ -4036,6 +4036,23 @@
             ]
         },
         {
+            "name":"row-gap",
+            "values":[
+                {
+                    "value":"#length"
+                },
+                {
+                    "value":"inherit"
+                },
+                {
+                    "value":"initial"
+                },
+                {
+                    "value":"normal"
+                }
+            ]
+        },
+        {
             "name":"scroll-behavior",
             "values":[
                 {
