@@ -93,6 +93,19 @@ export class HTMLElement{
         this.addStyle("flex-direction", value);
     }
 
+    addStyleGap(rowGap:string, columnGap:string):void{
+        this.addStyleGapColumn(columnGap);
+        this.addStyleGapRow(rowGap);
+    }
+
+    addStyleGapColumn(value:string):void{
+        this.addStyle("column-gap", value);
+    }
+
+    addStyleGapRow(value:string):void{
+        this.addStyle("row-gap", value);
+    }
+
     addStyleHeight(height:string):void{
         this.addStyle("height", height);
     }
