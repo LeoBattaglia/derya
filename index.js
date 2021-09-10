@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HTMLTagAttribute = exports.HTMLSourceCode = exports.HTMLElement = void 0;
+exports.HTMLTagAttribute = exports.HTMLSourceCode = exports.HTMLElement = exports.Generator = void 0;
 //Exports
+var html_create_ts_functions_1 = require("./lib/html_create_ts_functions");
+Object.defineProperty(exports, "Generator", { enumerable: true, get: function () { return html_create_ts_functions_1.Generator; } });
 var html_element_1 = require("./lib/html_element");
 Object.defineProperty(exports, "HTMLElement", { enumerable: true, get: function () { return html_element_1.HTMLElement; } });
 var html_sourcecode_1 = require("./lib/html_sourcecode");
