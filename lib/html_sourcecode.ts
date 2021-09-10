@@ -88,12 +88,10 @@ export class HTMLSourceCode{
         return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
     }
 
-    addTitle(value:string):HTMLSourceCode{
-        let sc = new HTMLSourceCode();
-        sc.openTitle()
-        sc.addContent(value)
-        sc.closeTitle();
-        return sc;
+    addTitle(value:string):void{
+        this.openTitle()
+        this.addContent(value)
+        this.closeTitle();
     }
 
     closeBody():HTMLElement{
