@@ -41,12 +41,24 @@ export class HTMLElement{
         this.addAttribute("content", value);
     }
 
+    addAttributeFor(value:string):void{
+        this.addAttribute("for", value);
+    }
+
+    addAttributeID(value:string):void{
+        this.addAttribute("id", value);
+    }
+
     addAttributeName(value:string):void{
         this.addAttribute("name", value);
     }
 
     addAttributeSrc(value:string):void{
         this.addAttribute("src", value);
+    }
+
+    addAttributeType(value:string):void{
+        this.addAttribute("type", value);
     }
 
     addStyle(name:string, value:string):void{

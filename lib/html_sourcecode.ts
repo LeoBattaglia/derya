@@ -55,9 +55,17 @@ export class HTMLSourceCode{
     }
 
     addImgDefault(src:string, alt:string):HTMLElement{
-        let tag:HTMLElement = this.addTag("img");
-        tag.addAttributeSrc(src)
+        let tag:HTMLElement = this.addTagUnsafe("img");
+        tag.addAttributeSrc(src);
         tag.addAttributeAlt(alt);
+        return tag;
+    }
+
+    addInputDefault(type:string, id:string, name:string){
+        let tag:HTMLElement = this.addTagUnsafe("input");
+        tag.addAttributeType(type);
+        tag.addAttributeID(id);
+        tag.addAttributeName(name);
         return tag;
     }
 
