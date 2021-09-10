@@ -88,8 +88,20 @@ export class HTMLSourceCode{
         return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
     }
 
+    addTitle(value:string):HTMLSourceCode{
+        let sc = new HTMLSourceCode();
+        sc.openTitle()
+        sc.addContent(value)
+        sc.closeTitle();
+        return sc;
+    }
+
     closeBody():HTMLElement{
         return this.closeTagUnsafe("body");
+    }
+
+    closeHead():HTMLElement{
+        return this.closeTagUnsafe("head");
     }
 
     closeHTML():HTMLElement{
@@ -105,6 +117,10 @@ export class HTMLSourceCode{
 
     closeTagUnsafe(tag:string):HTMLElement{
         return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, true));
+    }
+
+    closeTitle():HTMLElement{
+        return this.closeTagUnsafe("title");
     }
 
     getElement(id:number):HTMLElement{
@@ -157,6 +173,10 @@ export class HTMLSourceCode{
         return tag;
     }
 
+    openHead():HTMLElement{
+        return this.openTagUnsafe("head");
+    }
+
     openHTML():HTMLElement{
         return this.openTagUnsafe("html");
     }
@@ -188,6 +208,10 @@ export class HTMLSourceCode{
         let element:HTMLElement = this.openTag(tag);
         element.addAttribute("id", value);
         return element;
+    }
+
+    openTitle():HTMLElement{
+        return this.openTagUnsafe("title");
     }
 
     //Get-Methods
