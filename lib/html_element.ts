@@ -29,10 +29,82 @@ export class HTMLElement{
         }
     }
 
+    addAttributeAction(value:string):void{
+        this.addAttribute("action", value);
+    }
+
+    addAttributeAlt(value:string):void{
+        this.addAttribute("alt", value);
+    }
+
+    addAttributeContent(value:string):void{
+        this.addAttribute("content", value);
+    }
+
+    addAttributeName(value:string):void{
+        this.addAttribute("name", value);
+    }
+
+    addAttributeSrc(value:string):void{
+        this.addAttribute("src", value);
+    }
+
     addStyle(name:string, value:string):void{
         if(!sys.isNull(name) && !sys.isNull(value)){
             this.styles.push(new HTMLTagAttribute(name, value));
         }
+    }
+
+    addStyleBackgroundColor(value:string):void{
+        this.addStyle("background-color", value);
+    }
+
+    addStyleDisplay(value:string):void{
+        this.addStyle("display", value);
+    }
+
+    addStyleDisplayFlex():void{
+        this.addStyle("display", "flex");
+    }
+
+    addStyleDisplayFlexColumn():void{
+        this.addStyleDisplayFlex();
+        this.addStyleFlexDirection("column");
+    }
+
+    addStyleDisplayFlexRow():void{
+        this.addStyleDisplayFlex();
+        this.addStyleFlexDirection("row");
+    }
+
+    addStyleFlexDirection(value:string):void{
+        this.addStyle("flex-direction", value);
+    }
+
+    addStyleHeight(height:string):void{
+        this.addStyle("height", height);
+    }
+
+    addStyleMargin(margin:string):void{
+        this.addStyle("margin", margin);
+    }
+
+    addStyleMarginPadding(margin:string, padding:string):void{
+        this.addStyleMargin(margin);
+        this.addStylePadding(padding);
+    }
+
+    addStylePadding(padding:string):void{
+        this.addStyle("padding", padding);
+    }
+
+    addStyleSizes(width:string, height:string):void{
+        this.addStyleWidth(width);
+        this.addStyleHeight(height);
+    }
+
+    addStyleWidth(width:string):void{
+        this.addStyle("width", width);
     }
 
     getContent():string{
@@ -40,7 +112,7 @@ export class HTMLElement{
             return this.content;
         }else{
             if(this.closed){
-                return  "</" + this.content + ">";
+                return "</" + this.content + ">";
             }else{
                 let tag:string = this.content;
                 for(let attribute of this.attributes){
@@ -84,6 +156,7 @@ export class HTMLElement{
     get id():number{
         return this._id;
     }
+
     get styles():HTMLTagAttribute[]{
         return this._styles;
     }

@@ -54,11 +54,18 @@ export class HTMLSourceCode{
         return element;
     }
 
+    addImg(src:string, alt:string):HTMLElement{
+        let tag:HTMLElement = this.addTag("img");
+        tag.addAttributeSrc(src)
+        tag.addAttributeAlt(alt);
+        return tag;
+    }
+
     addMeta(name:string, content:string):HTMLElement{
         let tag:HTMLElement = new HTMLElement(this.getNewID(), "meta", true, false);
         if(!sys.isNull(name) && !sys.isNull(content)){
-            tag.addAttribute("name", name.toLowerCase());
-            tag.addAttribute("content", content);
+            tag.addAttributeName(name.toLowerCase());
+            tag.addAttributeContent(content);
             return this.addElement(tag);
         }
         return undefined;
@@ -79,6 +86,14 @@ export class HTMLSourceCode{
 
     private addTagUnsafe(tag:string):HTMLElement{
         return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
+    }
+
+    closeBody():HTMLElement{
+        return this.closeTagUnsafe("body");
+    }
+
+    closeHTML():HTMLElement{
+        return this.closeTagUnsafe("html");
     }
 
     closeTag(tag:string):HTMLElement{
@@ -116,7 +131,7 @@ export class HTMLSourceCode{
                 lvl--;
             }
             let tabs:string = "";
-            for(let i=0; i<lvl; i++){
+            for(let i = 0; i < lvl; i++){
                 tabs += "\t";
             }
             html += tabs + element.getContent() + "\r\n";
@@ -131,6 +146,27 @@ export class HTMLSourceCode{
         return this.ids++;
     }
 
+    openBody():HTMLElement{
+        return this.openTagUnsafe("body");
+    }
+
+    openBodyDefault():HTMLElement{
+        let tag:HTMLElement = this.openTagUnsafe("body");
+        tag.addStyleSizes("100%", "100%");
+        tag.addStyleMarginPadding("0em", "0em");
+        return tag;
+    }
+
+    openHTML():HTMLElement{
+        return this.openTagUnsafe("html");
+    }
+
+    openHTMLDefault():HTMLElement{
+        let tag:HTMLElement = this.openTagUnsafe("html");
+        tag.addStyleSizes("100%", "100%");
+        return tag;
+    }
+
     openTag(tag:string):HTMLElement{
         if(isClosedTag(tag.toLowerCase())){
             return this.openTagUnsafe(tag);
@@ -138,24 +174,20 @@ export class HTMLSourceCode{
         return undefined;
     }
 
+    openTagUnsafe(tag:string):HTMLElement{
+        return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
+    }
+
     openTagWithClass(tag:string, value:string):HTMLElement{
-        let element = this.openTag(tag);
-        if(element !== undefined){
-            element.addAttribute("class", value);
-        }
+        let element:HTMLElement = this.openTag(tag);
+        element.addAttribute("class", value);
         return element;
     }
 
     openTagWithID(tag:string, value:string):HTMLElement{
-        let element = this.openTag(tag);
-        if(element !== undefined){
-            element.addAttribute("id", value);
-        }
+        let element:HTMLElement = this.openTag(tag);
+        element.addAttribute("id", value);
         return element;
-    }
-
-    openTagUnsafe(tag:string):HTMLElement{
-        return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, false));
     }
 
     //Get-Methods
