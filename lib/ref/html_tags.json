@@ -1,155 +1,48 @@
 {
-    "attributes_event":[
-        "onafterprint",
-        "onbeforeprint",
-        "onbeforeunload",
-        "onerror",
-        "onhashchange",
-        "onload",
-        "onmessage",
-        "onoffline",
-        "ononline",
-        "onpagehide",
-        "onpageshow",
-        "onpopstate",
-        "onresize",
-        "onstorage",
-        "onunload"
-    ],
-    "attributes_global":[
-        {
-            "name":"accesskey",
-            "types":[
-                "$character"
-            ]
-        },
-        {
-            "name":"class",
-            "types":[
-                "$string"
-            ]
-        },
-        {
-            "name":"contenteditable",
-            "types":[
-                "$boolean"
-            ]
-        },
-        {
-            "name":"data-*",
-            "types":[
-                "$string"
-            ]
-        },
-        {
-            "name":"dir",
-            "types":[
-                "ltr",
-                "rtl",
-                "auto"
-            ]
-        },
-        {
-            "name":"draggable",
-            "types":[
-                "$boolean",
-                "auto"
-            ]
-        },
-        {
-            "name":"hidden",
-            "types":[]
-        },
-        {
-            "name":"id",
-            "types":[
-                "$string"
-            ]
-        },
-        {
-            "name":"lang",
-            "types":[
-                "$language_code"
-            ]
-        },
-        {
-            "name":"spellcheck",
-            "types":[
-                "$boolean"
-            ]
-        },
-        {
-            "name":"style",
-            "types":[
-                "$css"
-            ]
-        },
-        {
-            "name":"tabindex",
-            "types":[
-                "$number"
-            ]
-        },
-        {
-            "name":"title",
-            "types":[
-                "$string"
-            ]
-        },
-        {
-            "name":"translate",
-            "types":[
-                "yes",
-                "no"
-            ]
-        }
-    ],
     "tags":[
         {
-            "name":"<!--",
-            "closed":false,
-            "unique":false,
-            "attributes":[]
-        },
-        {
             "name":"doctype",
-            "closed":false,
             "unique":true,
+            "closed":false,
+            "global":false,
+            "events":false,
             "attributes":[]
         },
         {
             "name":"a",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"download",
                     "types":[
-                        "$file"
+                        "#filename"
                     ]
                 },
                 {
                     "name":"href",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"hreflang",
                     "types":[
-                        "$language_code"
+                        "#language_code"
                     ]
                 },
                 {
                     "name":"media",
                     "types":[
-                        "$media_query"
+                        "#media_query"
                     ]
                 },
                 {
                     "name":"ping",
                     "types":[
-                        "$urls"
+                        "#list_of_urls"
                     ]
                 },
                 {
@@ -194,62 +87,68 @@
                 {
                     "name":"type",
                     "types":[
-                        "$media_type"
+                        "#media_type"
                     ]
                 }
             ]
         },
         {
             "name":"abbr",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"address",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"area",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"alt",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"coords",
                     "types":[
-                        "$coordinates"
+                        "#coordinates"
                     ]
                 },
                 {
                     "name":"download",
                     "types":[
-                        "$file"
+                        "#filename"
                     ]
                 },
                 {
                     "name":"href",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"hreflang",
                     "types":[
-                        "$language_code"
+                        "#language_code"
                     ]
                 },
                 {
                     "name":"media",
                     "types":[
-                        "$media_query"
+                        "#media query"
                     ]
                 },
                 {
@@ -297,49 +196,63 @@
                         "_parent",
                         "_self",
                         "_top",
-                        "$frame"
+                        "#framename"
                     ]
                 },
                 {
                     "name":"type",
                     "types":[
-                        "$media_type"
+                        "#media_type"
                     ]
                 }
             ]
         },
         {
             "name":"article",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"aside",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"audio",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"autoplay",
-                    "types":[]
+                    "types":[
+                        "autoplay"
+                    ]
                 },
                 {
                     "name":"controls",
-                    "types":[]
+                    "types":[
+                        "controls"
+                    ]
                 },
                 {
                     "name":"loop",
-                    "types":[]
+                    "types":[
+                        "loop"
+                    ]
                 },
                 {
                     "name":"muted",
-                    "types":[]
+                    "types":[
+                        "muted"
+                    ]
                 },
                 {
                     "name":"preload",
@@ -352,26 +265,30 @@
                 {
                     "name":"src",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 }
             ]
         },
         {
             "name":"b",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"base",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":false,
             "attributes":[
                 {
                     "name":"href",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
@@ -387,14 +304,18 @@
         },
         {
             "name":"bdi",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"bdo",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"dir",
@@ -407,52 +328,64 @@
         },
         {
             "name":"blockquote",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"cite",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 }
             ]
         },
         {
             "name":"body",
-            "closed":true,
             "unique":true,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"br",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"button",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"autofocus",
-                    "types":[]
+                    "types":[
+                        "autofocus"
+                    ]
                 },
                 {
                     "name":"disabled",
-                    "types":[]
+                    "types":[
+                        "disabled"
+                    ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$string"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"formaction",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
@@ -472,7 +405,9 @@
                 },
                 {
                     "name":"formnovalidate",
-                    "types":[]
+                    "types":[
+                        "formnovalidate"
+                    ]
                 },
                 {
                     "name":"formtarget",
@@ -481,13 +416,13 @@
                         "_self",
                         "_parent",
                         "_top",
-                        "$frame"
+                        "#framename"
                     ]
                 },
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#name"
                     ]
                 },
                 {
@@ -501,264 +436,309 @@
                 {
                     "name":"value",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 }
             ]
         },
         {
             "name":"canvas",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"height",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 },
                 {
                     "name":"width",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 }
             ]
         },
         {
             "name":"caption",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"cite",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"code",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"col",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"span",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 }
             ]
         },
         {
             "name":"colgroup",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"span",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 }
             ]
         },
         {
             "name":"data",
-            "closed":true,
             "unique":false,
-            "attributes":[
-                {
-                    "name":"value",
-                    "types":[
-                        "$machine_readable_format"
-                    ]
-                }
-            ]
+            "closed":true,
+            "global":true,
+            "events":false,
+            "attributes":[]
         },
         {
             "name":"datalist",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"dd",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"del",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"cite",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"datetime",
                     "types":[
-                        "$datetime"
+                        "#yyyy-mm-ddthh:mm:sstzd"
                     ]
                 }
             ]
         },
         {
             "name":"details",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"open",
-                    "types":[]
+                    "types":[
+                        "open"
+                    ]
                 }
             ]
         },
         {
             "name":"dfn",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"dialog",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"open",
-                    "types":[]
+                    "types":[
+                        "open"
+                    ]
                 }
             ]
         },
         {
             "name":"div",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"dl",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"dt",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"em",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"embed",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"height",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 },
                 {
                     "name":"src",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"type",
                     "types":[
-                        "$media_type"
+                        "#media_type"
                     ]
                 },
                 {
                     "name":"width",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 }
             ]
         },
         {
             "name":"fieldset",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"disabled",
-                    "types":[]
+                    "types":[
+                        "disabled"
+                    ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 }
             ]
         },
         {
             "name":"figcaption",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"figure",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"footer",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"form",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"accept-charset",
                     "types":[
-                        "$character_set"
+                        "#character_set"
                     ]
                 },
                 {
-                    "name":"action-charset",
+                    "name":"action",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"autocomplete",
                     "types":[
-                        "off",
-                        "on"
+                        "on",
+                        "off"
                     ]
                 },
                 {
@@ -779,12 +759,14 @@
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"novalidate",
-                    "types":[]
+                    "types":[
+                        "novalidate"
+                    ]
                 },
                 {
                     "name":"rel",
@@ -814,116 +796,76 @@
         },
         {
             "name":"h1",
-            "closed":true,
             "unique":false,
-            "attributes":[]
-        },
-        {
-            "name":"h2",
             "closed":true,
-            "unique":false,
-            "attributes":[]
-        },
-        {
-            "name":"h3",
-            "closed":true,
-            "unique":false,
-            "attributes":[]
-        },
-        {
-            "name":"h4",
-            "closed":true,
-            "unique":false,
-            "attributes":[]
-        },
-        {
-            "name":"h5",
-            "closed":true,
-            "unique":false,
-            "attributes":[]
-        },
-        {
-            "name":"h6",
-            "closed":true,
-            "unique":false,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"head",
-            "closed":true,
             "unique":true,
+            "closed":true,
+            "global":true,
+            "events":false,
             "attributes":[]
         },
         {
             "name":"header",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"hr",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"html",
-            "closed":true,
             "unique":true,
-            "attributes":[]
-        },
-        {
-            "name":"i",
             "closed":true,
-            "unique":false,
+            "global":true,
+            "events":false,
             "attributes":[
+                {
+                    "name":"xmlns",
+                    "types":[
+                        "http://www.w3.org/1999/xhtml"
+                    ]
+                }
             ]
         },
         {
-            "name":"iframe",
-            "closed":true,
+            "name":"i",
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
-            "name":"img",
-            "closed":false,
+            "name":"iframe",
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
-                {
-                    "name":"alt",
-                    "types":[
-                        "$string"
-                    ]
-                },
-                {
-                    "name":"crossorigin",
-                    "types":[
-                        "anonymous",
-                        "use-credentials"
-                    ]
-                },
                 {
                     "name":"height",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 },
                 {
-                    "name":"ismap",
-                    "types":[]
-                },
-                {
-                    "name":"loading",
+                    "name":"name",
                     "types":[
-                        "eager",
-                        "lazy"
-                    ]
-                },
-                {
-                    "name":"longdesc",
-                    "types":[
-                        "$url"
+                        "#text"
                     ]
                 },
                 {
@@ -939,89 +881,168 @@
                     ]
                 },
                 {
-                    "name":"sizes",
+                    "name":"sandbox",
                     "types":[
-                        "$sizes"
+                        "allow-forms",
+                        "allow-pointer-lock",
+                        "allow-popups",
+                        "allow-same-origin",
+                        "allow-scripts",
+                        "allow-top-navigation"
                     ]
                 },
                 {
                     "name":"src",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
-                    "name":"srcset",
+                    "name":"srcdoc",
                     "types":[
-                        "$urls"
-                    ]
-                },
-                {
-                    "name":"usemap",
-                    "types":[
-                        "$string"
+                        "#html_code"
                     ]
                 },
                 {
                     "name":"width",
                     "types":[
-                        "$pixels"
+                        "#pixels"
+                    ]
+                }
+            ]
+        },
+        {
+            "name":"img",
+            "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
+            "attributes":[
+                {
+                    "name":"alt",
+                    "types":[
+                        "#text"
+                    ]
+                },
+                {
+                    "name":"height",
+                    "types":[
+                        "#pixels"
+                    ]
+                },
+                {
+                    "name":"ismap",
+                    "types":[
+                        "ismap"
+                    ]
+                },
+                {
+                    "name":"loading",
+                    "types":[
+                        "eager",
+                        "lazy"
+                    ]
+                },
+                {
+                    "name":"longdesc",
+                    "types":[
+                        "#url"
+                    ]
+                },
+                {
+                    "name":"referrerpolicy",
+                    "types":[
+                        "no-referrer",
+                        "no-referrer-when-downgrade",
+                        "origin",
+                        "origin-when-cross-origin",
+                        "unsafe-url"
+                    ]
+                },
+                {
+                    "name":"src",
+                    "types":[
+                        "#url"
+                    ]
+                },
+                {
+                    "name":"usemap",
+                    "types":[
+                        "##mapname"
+                    ]
+                },
+                {
+                    "name":"width",
+                    "types":[
+                        "#pixels"
                     ]
                 }
             ]
         },
         {
             "name":"input",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"accept",
                     "types":[
-                        "$string"
+                        "#file_extension",
+                        "audio/*",
+                        "video/*",
+                        "image/*",
+                        "#media_type"
                     ]
                 },
                 {
                     "name":"alt",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"autocomplete",
                     "types":[
-                        "off",
-                        "on"
+                        "on",
+                        "off"
                     ]
                 },
                 {
                     "name":"autofocus",
-                    "types":[]
+                    "types":[
+                        "autofocus"
+                    ]
                 },
                 {
                     "name":"checked",
-                    "types":[]
+                    "types":[
+                        "checked"
+                    ]
                 },
                 {
                     "name":"dirname",
                     "types":[
-                        "$string"
+                        "#inputname.dir"
                     ]
                 },
                 {
                     "name":"disabled",
-                    "types":[]
+                    "types":[
+                        "disabled"
+                    ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"formaction",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
@@ -1041,7 +1062,9 @@
                 },
                 {
                     "name":"formnovalidate",
-                    "types":[]
+                    "types":[
+                        "formnovalidate"
+                    ]
                 },
                 {
                     "name":"formtarget",
@@ -1050,93 +1073,99 @@
                         "_self",
                         "_parent",
                         "_top",
-                        "$frame_name"
+                        "#framename"
                     ]
                 },
                 {
                     "name":"height",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 },
                 {
                     "name":"list",
                     "types":[
-                        "$datalist_id"
+                        "#datalist_id"
                     ]
                 },
                 {
                     "name":"max",
                     "types":[
-                        "$number",
-                        "$date"
+                        "#number",
+                        "date"
                     ]
                 },
                 {
                     "name":"maxlength",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"min",
                     "types":[
-                        "$number",
-                        "$date"
+                        "#number",
+                        "date"
                     ]
                 },
                 {
                     "name":"minlength",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"multiple",
-                    "types":[]
+                    "types":[
+                        "multiple"
+                    ]
                 },
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"pattern",
                     "types":[
-                        "$string"
+                        "#regexp"
                     ]
                 },
                 {
                     "name":"placeholder",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"readonly",
-                    "types":[]
+                    "types":[
+                        "readonly"
+                    ]
                 },
                 {
                     "name":"required",
-                    "types":[]
+                    "types":[
+                        "required"
+                    ]
                 },
                 {
                     "name":"size",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"src",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"step",
                     "types":[
-                        "$number",
+                        "#number",
                         "any"
                     ]
                 },
@@ -1170,108 +1199,113 @@
                 {
                     "name":"value",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"width",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 }
             ]
         },
         {
             "name":"ins",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"cite",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"datetime",
                     "types":[
-                        "$datetime"
+                        "#yyyy-mm-ddthh:mm:sstzd"
                     ]
                 }
             ]
         },
         {
             "name":"kbd",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"label",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"for",
                     "types":[
-                        "$element_id"
+                        "#element_id"
                     ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 }
             ]
         },
         {
             "name":"legend",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"li",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"value",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 }
             ]
         },
         {
             "name":"link",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[
-                {
-                    "name":"crossorigin",
-                    "types":[
-                        "anonymous",
-                        "use-credentials"
-                    ]
-                },
                 {
                     "name":"href",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"hreflang",
                     "types":[
-                        "$language_code"
+                        "#language_code"
                     ]
                 },
                 {
                     "name":"media",
                     "types":[
-                        "$media_query"
+                        "#media_query"
                     ]
                 },
                 {
@@ -1307,64 +1341,66 @@
                 {
                     "name":"sizes",
                     "types":[
-                        "$sizes",
+                        "#heightxwidth",
                         "any"
-                    ]
-                },
-                {
-                    "name":"title",
-                    "types":[
-                        "$string"
                     ]
                 },
                 {
                     "name":"type",
                     "types":[
-                        "$media_type"
+                        "#media_type"
                     ]
                 }
             ]
         },
         {
             "name":"main",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"map",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#mapname"
                     ]
                 }
             ]
         },
         {
             "name":"mark",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"meta",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":false,
             "attributes":[
                 {
                     "name":"charset",
                     "types":[
-                        "$character_set"
+                        "#character_set"
                     ]
                 },
                 {
                     "name":"content",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
@@ -1382,7 +1418,7 @@
                         "application-name",
                         "author",
                         "description",
-                        "generator",
+                        "#generator",
                         "keywords",
                         "viewport"
                     ]
@@ -1391,134 +1427,139 @@
         },
         {
             "name":"meter",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"high",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"low",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"max",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"min",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"optimum",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"value",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 }
             ]
         },
         {
             "name":"nav",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"noscript",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":false,
             "attributes":[]
         },
         {
             "name":"object",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"data",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"height",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 },
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#name"
                     ]
                 },
                 {
                     "name":"type",
                     "types":[
-                        "$media_type"
-                    ]
-                },
-                {
-                    "name":"typemustmatch",
-                    "types":[
-                        "false",
-                        "true"
+                        "#media_type"
                     ]
                 },
                 {
                     "name":"usemap",
                     "types":[
-                        "$string"
+                        "##mapname"
                     ]
                 },
                 {
                     "name":"width",
                     "types":[
-                        "$pixels"
+                        "#pixels"
                     ]
                 }
             ]
         },
         {
             "name":"ol",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"reversed",
-                    "types":[]
+                    "types":[
+                        "reversed"
+                    ]
                 },
                 {
                     "name":"start",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
@@ -1535,174 +1576,218 @@
         },
         {
             "name":"optgroup",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"disabled",
-                    "types":[]
+                    "types":[
+                        "disabled"
+                    ]
                 },
                 {
                     "name":"label",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 }
             ]
         },
         {
             "name":"option",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"disabled",
-                    "types":[]
+                    "types":[
+                        "disabled"
+                    ]
                 },
                 {
                     "name":"label",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"selected",
-                    "types":[]
+                    "types":[
+                        "selected"
+                    ]
                 },
                 {
                     "name":"value",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 }
             ]
         },
         {
             "name":"output",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"for",
                     "types":[
-                        "$element_id"
+                        "#element_id"
                     ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#name"
                     ]
                 }
             ]
         },
         {
             "name":"p",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"param",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#name"
                     ]
                 },
                 {
                     "name":"value",
                     "types":[
-                        "$string"
+                        "#value"
                     ]
                 }
             ]
         },
         {
             "name":"picture",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"pre",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"progress",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"max",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"value",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 }
             ]
         },
         {
             "name":"q",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"cite",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 }
             ]
         },
         {
             "name":"rp",
-            "closed":true,
             "unique":false,
-            "attributes":[]
-        },
-        {
-            "name":"ruby",
             "closed":true,
-            "unique":false,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"rt",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
+            "attributes":[]
+        },
+        {
+            "name":"ruby",
+            "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
+            "attributes":[]
+        },
+        {
+            "name":"s",
+            "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"samp",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"script",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":false,
             "attributes":[
                 {
                     "name":"async",
-                    "types":[]
+                    "types":[
+                        "async"
+                    ]
                 },
                 {
                     "name":"crossorigin",
@@ -1713,19 +1798,14 @@
                 },
                 {
                     "name":"defer",
-                    "types":[]
+                    "types":[
+                        "defer"
+                    ]
                 },
                 {
                     "name":"integrity",
                     "types":[
-                        "$string"
-                    ]
-                },
-                {
-                    "name":"nomodule",
-                    "types":[
-                        "false",
-                        "true"
+                        "#filehash"
                     ]
                 },
                 {
@@ -1744,128 +1824,144 @@
                 {
                     "name":"src",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"type",
                     "types":[
-                        "$script_type"
+                        "#scripttype"
                     ]
                 }
             ]
         },
         {
             "name":"section",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"select",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"autofocus",
-                    "types":[]
+                    "types":[
+                        "autofocus"
+                    ]
                 },
                 {
                     "name":"disabled",
-                    "types":[]
+                    "types":[
+                        "disabled"
+                    ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"multiple",
-                    "types":[]
+                    "types":[
+                        "multiple"
+                    ]
                 },
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#name"
                     ]
                 },
                 {
                     "name":"required",
-                    "types":[]
+                    "types":[
+                        "required"
+                    ]
                 },
                 {
                     "name":"size",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 }
             ]
         },
         {
             "name":"small",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"source",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"media",
                     "types":[
-                        "$media_query"
-                    ]
-                },
-                {
-                    "name":"sizes",
-                    "types":[
-                        "$sizes"
+                        "#media_query"
                     ]
                 },
                 {
                     "name":"src",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"srcset",
                     "types":[
-                        "$url"
+                        "#url"
                     ]
                 },
                 {
                     "name":"type",
                     "types":[
-                        "$mime_type"
+                        "#mime-type"
                     ]
                 }
             ]
         },
         {
             "name":"span",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"strong",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"style",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"media",
                     "types":[
-                        "$media_query"
+                        "#media_query"
                     ]
                 },
                 {
@@ -1878,145 +1974,158 @@
         },
         {
             "name":"sub",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"summary",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"sup",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"svg",
-            "closed":true,
             "unique":false,
-            "attributes":[
-                {
-                    "name":"height",
-                    "types":[
-                        "$number"
-                    ]
-                },
-                {
-                    "name":"width",
-                    "types":[
-                        "$number"
-                    ]
-                }
-            ]
+            "closed":true,
+            "global":false,
+            "events":false,
+            "attributes":[]
         },
         {
             "name":"table",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"tbody",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"td",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"colspan",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"headers",
                     "types":[
-                        "$header_id"
+                        "#header_id"
                     ]
                 },
                 {
                     "name":"rowspan",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 }
             ]
         },
         {
             "name":"template",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":false,
             "attributes":[]
         },
         {
             "name":"textarea",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"autofocus",
-                    "types":[]
+                    "types":[
+                        "autofocus"
+                    ]
                 },
                 {
                     "name":"cols",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"dirname",
                     "types":[
-                        "$string"
+                        "#textareaname.dir"
                     ]
                 },
                 {
                     "name":"disabled",
-                    "types":[]
+                    "types":[
+                        "disabled"
+                    ]
                 },
                 {
                     "name":"form",
                     "types":[
-                        "$form_id"
+                        "#form_id"
                     ]
                 },
                 {
                     "name":"maxlength",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"name",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"placeholder",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"readonly",
-                    "types":[]
+                    "types":[
+                        "readonly"
+                    ]
                 },
                 {
                     "name":"required",
-                    "types":[]
+                    "types":[
+                        "required"
+                    ]
                 },
                 {
                     "name":"rows",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
@@ -2030,37 +2139,41 @@
         },
         {
             "name":"tfoot",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"th",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"abbr",
                     "types":[
-                        "$string"
+                        "#text"
                     ]
                 },
                 {
                     "name":"colspan",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
                     "name":"headers",
                     "types":[
-                        "$header_id"
+                        "#header_id"
                     ]
                 },
                 {
                     "name":"rowspan",
                     "types":[
-                        "$number"
+                        "#number"
                     ]
                 },
                 {
@@ -2076,151 +2189,89 @@
         },
         {
             "name":"thead",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"time",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[
                 {
                     "name":"datetime",
                     "types":[
-                        "$datetime"
+                        "#datetime"
                     ]
                 }
             ]
         },
         {
             "name":"title",
-            "closed":true,
             "unique":true,
+            "closed":true,
+            "global":true,
+            "events":false,
             "attributes":[]
         },
         {
             "name":"tr",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"track",
-            "closed":false,
             "unique":false,
-            "attributes":[
-                {
-                    "name":"default",
-                    "types":[]
-                },
-                {
-                    "name":"kind",
-                    "types":[
-                        "captions",
-                        "chapters",
-                        "descriptions",
-                        "metadata",
-                        "subtitles"
-                    ]
-                },
-                {
-                    "name":"label",
-                    "types":[
-                        "$string"
-                    ]
-                },
-                {
-                    "name":"src",
-                    "types":[
-                        "$url"
-                    ]
-                },
-                {
-                    "name":"srclang",
-                    "types":[
-                        "$language_code"
-                    ]
-                }
-            ]
+            "closed":false,
+            "global":true,
+            "events":true,
+            "attributes":[]
         },
         {
             "name":"u",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"ul",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"var",
-            "closed":true,
             "unique":false,
+            "closed":true,
+            "global":true,
+            "events":true,
             "attributes":[]
         },
         {
             "name":"video",
-            "closed":true,
             "unique":false,
-            "attributes":[
-                {
-                    "name":"autoplay",
-                    "types":[]
-                },
-                {
-                    "name":"controls",
-                    "types":[]
-                },
-                {
-                    "name":"height",
-                    "types":[
-                        "$pixels"
-                    ]
-                },
-                {
-                    "name":"loop",
-                    "types":[]
-                },
-                {
-                    "name":"muted",
-                    "types":[]
-                },
-                {
-                    "name":"poster",
-                    "types":[
-                        "$url"
-                    ]
-                },
-                {
-                    "name":"preload",
-                    "types":[
-                        "auto",
-                        "metadata",
-                        "none"
-                    ]
-                },
-                {
-                    "name":"src",
-                    "types":[
-                        "$url"
-                    ]
-                },
-                {
-                    "name":"width",
-                    "types":[
-                        "$pixels"
-                    ]
-                }
-            ]
+            "closed":true,
+            "global":true,
+            "events":true,
+            "attributes":[]
         },
         {
             "name":"wbr",
-            "closed":false,
             "unique":false,
+            "closed":false,
+            "global":true,
+            "events":true,
             "attributes":[]
         }
     ]

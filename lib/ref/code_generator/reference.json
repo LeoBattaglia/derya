@@ -1,0 +1,9 @@
+{
+    "unique":[
+        "body",
+        "doctype",
+        "head",
+        "html",
+        "title"
+    ]
+}
