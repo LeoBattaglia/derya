@@ -2,7 +2,7 @@
 import {HTMLSourceCode} from "./html_sourcecode";
 import {ObjectContainer} from "samara";
 import {HTMLElement} from "./html_element";
-import * as tags from "./ref/html/tags.json";
+import * as tags from "./ref/html_tags.json";
 
 //Constants
 const id_default:number = -1;
