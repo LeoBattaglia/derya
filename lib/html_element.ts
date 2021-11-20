@@ -107,7 +107,7 @@ export class HTMLElement{
         for(let prop of properties.properties){
             if(prop.name === name){
                 for(let val of prop.values){
-                    if(val.value.indexOf("#") < 0){
+                    if(val.value.indexOf("#") < 0 && val.value.indexOf("@") < 0){
                         if(val.value === value){
                             return true;
                         }

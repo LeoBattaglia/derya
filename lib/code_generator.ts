@@ -30,6 +30,52 @@ function printLine(){
     console.log("-------------------------------------------------------------------------------------");
 }
 
+function requestGlobalAttributes(){
+    let url:string = "https://www.w3schools.com/TAGS/ref_standardattributes.asp";
+    req({
+        uri: url,
+    }, function(error, response, body){
+        let sc:string = body;
+        sc = sc.substr(sc.indexOf("<h2>HTML Global Attributes</h2>") + "<h2>HTML Global Attributes</h2>".length, sc.length);
+        sc = sc.substr(0, sc.indexOf("</table>"));
+        let lines :string[] = sc.split("\n");
+        let atts:string[] = [];
+        for(let line of lines){
+            if(line.indexOf("href=") > -1){
+                line = line.substr(line.indexOf("\">") + 2, line.length);
+                line = line.substr(0, line.indexOf("</a>"))
+                atts.push(line);
+            }
+        }
+        json = "";
+        for(let att of atts){
+            console.log("Att: " + att);
+            json += "{\n";
+            json += "\"attributes\":[\n";
+
+            json += "\n";
+            json += "\n";
+            json += "\n";
+            json += "\n";
+
+            json += "]\n";
+            json += "}\n";
+
+        }
+
+
+        fs.writeFile("./lib/ref/html_tags.json", json, err => {
+            if(err){
+                console.error(err)
+                return
+            }
+        })
+
+    });
+    //TODO: All
+
+}
+
 function requestTags(){
     if(urls_tags.length > 0 && count < limit){
         count++;
@@ -224,7 +270,8 @@ function requestTagURLs(){
 export class CodeGenerator{
     //Start-Method
     start(){
-        requestTagURLs();
+        //requestTagURLs();
+        requestGlobalAttributes();
 
         //TODO: Next Request
 
