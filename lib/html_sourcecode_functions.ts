@@ -58,12 +58,14 @@ export class HTMLSourceCodeFunctions{
         return undefined;
     }
 
-    getHTML():string{
+    getHTML(validate?:Boolean):string{
         let html:string = "";
-        let errors:ObjectContainer = validatePage(this.sc);
-        if(errors.getLength() > 0){
-            for(let error of errors.objects){
-                html += "ERROR: " + error.object + "!\r\n";
+        if(validate === true){
+            let errors:ObjectContainer = validatePage(this.sc);
+            if(errors.getLength() > 0){
+                for(let error of errors.objects){
+                    html += "ERROR: " + error.object + "!\r\n";
+                }
             }
         }
         //Generate format String
