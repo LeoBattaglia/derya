@@ -1,7 +1,7 @@
 //Import
 import {HTMLTagAttribute} from "./html_tag_attribute";
 import * as sys from "samara";
-import * as properties from "../backup/css/properties.json";
+import * as properties from "./ref/css_properties.json";
 
 //Class
 export class HTMLElement{
@@ -107,8 +107,8 @@ export class HTMLElement{
         for(let prop of properties.properties){
             if(prop.name === name){
                 for(let val of prop.values){
-                    if(val.value.indexOf("#") < 0 && val.value.indexOf("@") < 0){
-                        if(val.value === value){
+                    if(val.indexOf("#") < 0 && val.indexOf("@") < 0){
+                        if(val === value){
                             return true;
                         }
                     }else{
