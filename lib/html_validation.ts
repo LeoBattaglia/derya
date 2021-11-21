@@ -1,5 +1,4 @@
 //Imports
-import {HTMLSourceCode} from "./html_sourcecode";
 import {ObjectContainer} from "samara";
 import {HTMLElement} from "./html_element";
 import * as tags from "./ref/html_tags.json";

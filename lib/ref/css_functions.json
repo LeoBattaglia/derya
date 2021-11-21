@@ -1,0 +1,21 @@
+{
+    "functions":[
+        "attr()",
+        "calc()",
+        "conic-gradient()",
+        "counter()",
+        "cubic-bezier()",
+        "hsl()",
+        "hsla()",
+        "linear-gradient()",
+        "max()",
+        "min()",
+        "radial-gradient()",
+        "repeating-conic-gradient()",
+        "repeating-linear-gradient()",
+        "repeating-radial-gradient()",
+        "rgb()",
+        "rgba()",
+        "var()"
+    ]
+}

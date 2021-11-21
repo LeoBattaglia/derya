@@ -1,5 +1,7 @@
+/backup
 /.idea
 /node_modules
 derya.iml
 test.*
+*code_generator.*
 

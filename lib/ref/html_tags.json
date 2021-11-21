@@ -2,18 +2,18 @@
     "tags":[
         {
             "name":"doctype",
-            "unique":true,
             "closed":false,
-            "global":false,
             "events":false,
+            "globals":false,
+            "unique":true,
             "attributes":[]
         },
         {
             "name":"a",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"download",
@@ -94,26 +94,26 @@
         },
         {
             "name":"abbr",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"address",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"area",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"alt",
@@ -209,26 +209,26 @@
         },
         {
             "name":"article",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"aside",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"audio",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"autoplay",
@@ -272,18 +272,18 @@
         },
         {
             "name":"b",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"base",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"href",
@@ -304,18 +304,18 @@
         },
         {
             "name":"bdi",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"bdo",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"dir",
@@ -328,10 +328,10 @@
         },
         {
             "name":"blockquote",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"cite",
@@ -343,26 +343,26 @@
         },
         {
             "name":"body",
-            "unique":true,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":true,
             "attributes":[]
         },
         {
             "name":"br",
-            "unique":false,
-            "closed":false,
-            "global":true,
+            "closed":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"button",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"autofocus",
@@ -443,10 +443,10 @@
         },
         {
             "name":"canvas",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"height",
@@ -464,34 +464,34 @@
         },
         {
             "name":"caption",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"cite",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"code",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"col",
-            "unique":false,
-            "closed":false,
-            "global":true,
+            "closed":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"span",
@@ -503,10 +503,10 @@
         },
         {
             "name":"colgroup",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"span",
@@ -518,34 +518,41 @@
         },
         {
             "name":"data",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":false,
-            "attributes":[]
+            "globals":true,
+            "unique":false,
+            "attributes":[
+                {
+                    "name":"",
+                    "types":[
+                        "#machine-readable format"
+                    ]
+                }
+            ]
         },
         {
             "name":"datalist",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"dd",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"del",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"cite",
@@ -563,10 +570,10 @@
         },
         {
             "name":"details",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"open",
@@ -578,18 +585,18 @@
         },
         {
             "name":"dfn",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"dialog",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"open",
@@ -601,42 +608,42 @@
         },
         {
             "name":"div",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"dl",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"dt",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"em",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"embed",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"height",
@@ -666,10 +673,10 @@
         },
         {
             "name":"fieldset",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"disabled",
@@ -693,34 +700,34 @@
         },
         {
             "name":"figcaption",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"figure",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"footer",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"form",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"accept-charset",
@@ -796,42 +803,42 @@
         },
         {
             "name":"h1",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"head",
-            "unique":true,
             "closed":true,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":true,
             "attributes":[]
         },
         {
             "name":"header",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"hr",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"html",
-            "unique":true,
             "closed":true,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":true,
             "attributes":[
                 {
                     "name":"xmlns",
@@ -843,23 +850,50 @@
         },
         {
             "name":"i",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"iframe",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
+                {
+                    "name":"",
+                    "types":[
+                        "&nbsp;"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "true",
+                        "false"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "true",
+                        "false"
+                    ]
+                },
                 {
                     "name":"height",
                     "types":[
                         "#pixels"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "eager",
+                        "lazy"
                     ]
                 },
                 {
@@ -913,15 +947,22 @@
         },
         {
             "name":"img",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"alt",
                     "types":[
                         "#text"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "anonymous",
+                        "use-credentials"
                     ]
                 },
                 {
@@ -960,9 +1001,21 @@
                     ]
                 },
                 {
+                    "name":"",
+                    "types":[
+                        "#sizes"
+                    ]
+                },
+                {
                     "name":"src",
                     "types":[
                         "#url"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "#url-list "
                     ]
                 },
                 {
@@ -981,10 +1034,10 @@
         },
         {
             "name":"input",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"accept",
@@ -1092,7 +1145,7 @@
                     "name":"max",
                     "types":[
                         "#number",
-                        "date"
+                        "#date"
                     ]
                 },
                 {
@@ -1105,7 +1158,7 @@
                     "name":"min",
                     "types":[
                         "#number",
-                        "date"
+                        "#date"
                     ]
                 },
                 {
@@ -1166,7 +1219,7 @@
                     "name":"step",
                     "types":[
                         "#number",
-                        "any"
+                        "#any"
                     ]
                 },
                 {
@@ -1212,10 +1265,10 @@
         },
         {
             "name":"ins",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"cite",
@@ -1233,18 +1286,18 @@
         },
         {
             "name":"kbd",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"label",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"for",
@@ -1262,18 +1315,18 @@
         },
         {
             "name":"legend",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"li",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"value",
@@ -1285,11 +1338,18 @@
         },
         {
             "name":"link",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
+                {
+                    "name":"",
+                    "types":[
+                        "anonymous",
+                        "use-credentials"
+                    ]
+                },
                 {
                     "name":"href",
                     "types":[
@@ -1342,7 +1402,13 @@
                     "name":"sizes",
                     "types":[
                         "#heightxwidth",
-                        "any"
+                        "#any"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "&nbsp;"
                     ]
                 },
                 {
@@ -1355,18 +1421,18 @@
         },
         {
             "name":"main",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"map",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"name",
@@ -1378,18 +1444,18 @@
         },
         {
             "name":"mark",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"meta",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"charset",
@@ -1419,7 +1485,7 @@
                         "author",
                         "description",
                         "#generator",
-                        "keywords",
+                        "#keywords",
                         "viewport"
                     ]
                 }
@@ -1427,10 +1493,10 @@
         },
         {
             "name":"meter",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"form",
@@ -1478,26 +1544,26 @@
         },
         {
             "name":"nav",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"noscript",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"object",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"data",
@@ -1530,6 +1596,12 @@
                     ]
                 },
                 {
+                    "name":"",
+                    "types":[
+                        "#true/false"
+                    ]
+                },
+                {
                     "name":"usemap",
                     "types":[
                         "##mapname"
@@ -1545,10 +1617,10 @@
         },
         {
             "name":"ol",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"reversed",
@@ -1566,9 +1638,9 @@
                     "name":"type",
                     "types":[
                         "1",
-                        "A",
                         "a",
-                        "I",
+                        "a",
+                        "i",
                         "i"
                     ]
                 }
@@ -1576,10 +1648,10 @@
         },
         {
             "name":"optgroup",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"disabled",
@@ -1597,10 +1669,10 @@
         },
         {
             "name":"option",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"disabled",
@@ -1630,10 +1702,10 @@
         },
         {
             "name":"output",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"for",
@@ -1657,18 +1729,18 @@
         },
         {
             "name":"p",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"param",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"name",
@@ -1686,26 +1758,26 @@
         },
         {
             "name":"picture",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"pre",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"progress",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"max",
@@ -1723,10 +1795,10 @@
         },
         {
             "name":"q",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"cite",
@@ -1738,50 +1810,50 @@
         },
         {
             "name":"rp",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"rt",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"ruby",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"s",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"samp",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"script",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"async",
@@ -1806,6 +1878,13 @@
                     "name":"integrity",
                     "types":[
                         "#filehash"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "true",
+                        "false"
                     ]
                 },
                 {
@@ -1837,18 +1916,18 @@
         },
         {
             "name":"section",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"select",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"autofocus",
@@ -1896,23 +1975,29 @@
         },
         {
             "name":"small",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"source",
-            "unique":false,
-            "closed":false,
-            "global":true,
+            "closed":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"media",
                     "types":[
                         "#media_query"
+                    ]
+                },
+                {
+                    "name":"",
+                    "types":[
+                        "&nbsp;"
                     ]
                 },
                 {
@@ -1937,26 +2022,26 @@
         },
         {
             "name":"span",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"strong",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"style",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"media",
@@ -1974,58 +2059,58 @@
         },
         {
             "name":"sub",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"summary",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"sup",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"svg",
-            "unique":false,
             "closed":true,
-            "global":false,
             "events":false,
+            "globals":false,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"table",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"tbody",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"td",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"colspan",
@@ -2049,18 +2134,18 @@
         },
         {
             "name":"template",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"textarea",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"autofocus",
@@ -2139,18 +2224,18 @@
         },
         {
             "name":"tfoot",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"th",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"abbr",
@@ -2189,18 +2274,18 @@
         },
         {
             "name":"thead",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"time",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[
                 {
                     "name":"datetime",
@@ -2212,66 +2297,66 @@
         },
         {
             "name":"title",
-            "unique":true,
             "closed":true,
-            "global":true,
             "events":false,
+            "globals":true,
+            "unique":true,
             "attributes":[]
         },
         {
             "name":"tr",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"track",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"u",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"ul",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"var",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"video",
-            "unique":false,
             "closed":true,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         },
         {
             "name":"wbr",
-            "unique":false,
             "closed":false,
-            "global":true,
             "events":true,
+            "globals":true,
+            "unique":false,
             "attributes":[]
         }
     ]
