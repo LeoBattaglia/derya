@@ -2,7 +2,6 @@
 import {Grabber, TableValues} from "./grabber";
 import * as sys from "samara";
 import * as uniques from "./ref/html_tags_unique.json";
-import {exists} from "fs";
 
 //Constants
 const generatedMethods:string = "//Generated-Methods";
