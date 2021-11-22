@@ -13,7 +13,7 @@ export class CSSElement{
     }
 
     //Methods
-    addProperty(name:string, value:string){
+    addProperty(name:string, value:string):void{
         this.properties.push(new CSSProperty(name, value));
     }
 }

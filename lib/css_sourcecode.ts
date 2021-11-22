@@ -20,6 +20,13 @@ export class CSSSourceCode{
         this.elements.push(element);
     }
 
+    addPropertyToElement(selector:string, property:string, value:string):void{
+        let element = this.getElementBySelector(selector);
+        if(element !== undefined){
+            element.addProperty(property, value);
+        }
+    }
+
     getCSS():string{
         let sc:SourceObject = new SourceObject();
         for(let element of this.elements){
@@ -35,6 +42,15 @@ export class CSSSourceCode{
     getElement(id:number):CSSElement{
         for(let element of this.elements){
             if(element.id === id){
+                return element;
+            }
+        }
+        return undefined;
+    }
+
+    getElementBySelector(selector:string):CSSElement{
+        for(let element of this.elements){
+            if(element.selector === selector){
                 return element;
             }
         }
