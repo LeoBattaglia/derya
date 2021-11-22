@@ -373,14 +373,14 @@ export class Generator{
         let sc_att:sys.SourceObject = new sys.SourceObject();
         for(let data of atts){
             sc_att.add("addAttribute" + createName(data) + "(value:string):void{", 1);
-            sc_att.add("this.addAttribute(\"" + data + "\", value);", 2);
+            sc_att.add("this.addAttributeUnsafe(\"" + data + "\", value);", 2);
             sc_att.add("}", 1);
         }
         let sc_style:sys.SourceObject = new sys.SourceObject();
         for(let data of styles){
             sc_style.add("addStyle" + createName(data) + "(value:string):void{", 1);
             sc_style.add("if(this.validateStyleValue(\"" + data + "\", value)){", 2);
-            sc_style.add("this.addStyle(\"" + data + "\", value);", 3);
+            sc_style.add("this.addStyleUnsafe(\"" + data + "\", value);", 3);
             sc_style.add("}", 2);
             sc_style.add("}", 1);
         }
@@ -390,7 +390,18 @@ export class Generator{
         sc_ts += "\n" + sc_style.getString();
         sc_ts += "}";
         sys.writeFile("./lib/html_element.ts", sc_ts);
-
+        //CSS-Properties
+        let sc_css:sys.SourceObject = new sys.SourceObject();
+        for(let data of styles){
+            sc_css.add("addProperty" + createName(data) + "(value:string):void{", 1);
+            sc_css.add("this.addPropertyUnsafe(\"" + data + "\", value);", 2);
+            sc_css.add("}", 1);
+        }
+        sc_ts = sys.readFile("./lib/css_element.ts");
+        sc_ts = sc_ts.substring(0, sc_ts.indexOf(generatedMethods) + generatedMethods.length);
+        sc_ts += "\n" + sc_css.getString();
+        sc_ts += "}";
+        sys.writeFile("./lib/css_element.ts", sc_ts);
 
         //SubFunctions
         function createName(str:string):string{
@@ -416,9 +427,7 @@ export class Generator{
                 return true;
             }
             for(let a of atts){
-                //console.log("EXISTS: " + att + " || " + a);
                 if(a === att){
-                    //console.log("EXISTS TRUE: " + att);
                     return true;
                 }
             }

@@ -1,5 +1,6 @@
 //Exports
-export {CSSElement, CSSProperty} from "./lib/css_element";
+export {CSSElement} from "./lib/css_element";
+export {CSSProperty} from "./lib/css_property";
 export {CSSSourceCode} from "./lib/css_sourcecode";
 export {HTMLElement} from "./lib/html_element";
 export {HTMLSourceCode} from "./lib/html_sourcecode";
