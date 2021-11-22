@@ -3,7 +3,6 @@ import {HTMLElement} from "./html_element";
 import {ObjectContainer} from "samara";
 import {isClosedTag, isTag, validatePage} from "./html_validation";
 import * as sys from "samara";
-//import {HTMLSourceCodeFunctions} from "./html_sourcecode_functions_gen";
 
 //Classes
 export class HTMLSourceCode{
@@ -150,7 +149,7 @@ export class HTMLSourceCode{
         return html;
     }
 
-    getNewID():number{
+    private getNewID():number{
         return this.ids++;
     }
 
