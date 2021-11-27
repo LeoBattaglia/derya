@@ -53,6 +53,15 @@ export class HTMLSourceCode{
         return this.addContent("@font-face{font-family: \"" + family + "\"; src: url(\"/" + url + "\");}")
     }
 
+    addIcon(name:string):HTMLSourceCode{
+        let sc = new HTMLSourceCode();
+        let tag:HTMLElement = sc.openSpan();
+        tag.addAttributeClass("material-icons");
+        sc.addContent(name);
+        sc.closeSpan();
+        return sc;
+    }
+
     addImgDefault(src:string, alt:string):HTMLElement{
         let tag:HTMLElement = this.addTagUnsafe("img");
         tag.addAttributeSrc(src);
