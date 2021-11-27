@@ -53,9 +53,17 @@ export class HTMLSourceCode{
         return this.addContent("@font-face{font-family: \"" + family + "\"; src: url(\"/" + url + "\");}")
     }
 
-    addIcon(name:string):HTMLElement{
+    addIcon(name:string, md:string[]):HTMLElement{
         let tag:HTMLElement = this.openSpan();
-        tag.addAttributeClass("material-icons");
+        if(md.length < 1){
+            tag.addAttributeClass("material-icons");
+        }else{
+            let str:string = "material-icons";
+            for(let i:number = 0; i < md.length; i++){
+                str += " " + md[i];
+            }
+            tag.addAttributeClass(str);
+        }
         tag = this.addContent(name);
         this.closeSpan();
         return tag;
