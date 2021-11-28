@@ -19,7 +19,7 @@ export class HTMLSourceCode{
     addCharset(charset:string):HTMLElement{
         let tag:HTMLElement = new HTMLElement(this.getNewID(), "meta", true, false);
         if(!sys.isNull(charset)){
-            tag.addAttribute("charset", charset.toUpperCase());
+            tag.addAttributeCharset(charset.toUpperCase());
             return this.addElement(tag);
         }
         return undefined;
@@ -70,14 +70,14 @@ export class HTMLSourceCode{
     }
 
     addImgDefault(src:string, alt:string):HTMLElement{
-        let tag:HTMLElement = this.addTagUnsafe("img");
+        let tag:HTMLElement = this.addImg();
         tag.addAttributeSrc(src);
         tag.addAttributeAlt(alt);
         return tag;
     }
 
     addInputDefault(type:string, id:string, name:string){
-        let tag:HTMLElement = this.addTagUnsafe("input");
+        let tag:HTMLElement = this.addInput();
         tag.addAttributeType(type);
         tag.addAttributeId(id);
         tag.addAttributeName(name);
@@ -170,20 +170,26 @@ export class HTMLSourceCode{
     }
 
     openBodyDefault():HTMLElement{
-        let tag:HTMLElement = this.openTagUnsafe("body");
+        let tag:HTMLElement = this.openBody();
         tag.addStyleSizes("100%", "100%");
         tag.addStyleMarginPadding("0em", "0em");
         return tag;
     }
 
+    openDivWithClass(value:string):HTMLElement{
+        let element:HTMLElement = this.openDiv();
+        element.addAttributeClass(value);
+        return element;
+    }
+
     openDivWithID(value:string):HTMLElement{
         let element:HTMLElement = this.openDiv();
-        element.addAttribute("id", value);
+        element.addAttributeId(value);
         return element;
     }
 
     openHTMLDefault():HTMLElement{
-        let tag:HTMLElement = this.openTagUnsafe("html");
+        let tag:HTMLElement = this.openHtml();
         tag.addStyleSizes("100%", "100%");
         return tag;
     }
@@ -201,13 +207,13 @@ export class HTMLSourceCode{
 
     openTagWithClass(tag:string, value:string):HTMLElement{
         let element:HTMLElement = this.openTag(tag);
-        element.addAttribute("class", value);
+        element.addAttributeClass(value);
         return element;
     }
 
     openTagWithID(tag:string, value:string):HTMLElement{
         let element:HTMLElement = this.openTag(tag);
-        element.addAttribute("id", value);
+        element.addAttributeId(value);
         return element;
     }
 
