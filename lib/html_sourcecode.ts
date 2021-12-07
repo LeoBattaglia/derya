@@ -3,6 +3,7 @@ import {HTMLElement} from "./html_element";
 import {ObjectContainer} from "samara";
 import {isClosedTag, isTag, validatePage} from "./html_validation";
 import * as sys from "samara";
+import * as tags from "./ref/html_tags.json";
 
 //Classes
 export class HTMLSourceCode{
@@ -11,8 +12,11 @@ export class HTMLSourceCode{
     private _sc:HTMLElement[];
 
     //Constructor
-    constructor(){
+    constructor(sourceCode?:string){
         this.sc = [];
+        if(!sys.isNull(sourceCode)){
+            this.parse(sourceCode);
+        }
     }
 
     //Methods
@@ -33,7 +37,7 @@ export class HTMLSourceCode{
     }
 
     addContent(content:string):HTMLElement{
-        content = sys.removeTags(content);
+        content = sys.removeTags(content).trim();
         if(!sys.isNull(content)){
             return this.addElement(new HTMLElement(this.getNewID(), content, false, undefined));
         }
@@ -128,6 +132,23 @@ export class HTMLSourceCode{
         return this.addElement(new HTMLElement(this.getNewID(), tag.toLowerCase(), true, true));
     }
 
+    static containsTags(sourceCode:string):Boolean{
+        if(sourceCode.indexOf("<") > -1 && sourceCode.indexOf(">") > sourceCode.indexOf("<")){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    static extractComment(str:string):string{
+        str = str.substring(4, str.length);
+        str = sys.removeAll(str, "-->");
+        if(str.indexOf(">") > -1){
+            str = str.substring(0, str.indexOf(">"))
+        }
+        return str.trim();
+    }
+
     getElement(id:number):HTMLElement{
         for(let element of this.sc){
             if(element.id === id){
@@ -167,6 +188,30 @@ export class HTMLSourceCode{
 
     private getNewID():number{
         return this.ids++;
+    }
+
+    static getTag(name:string){
+        if(name.indexOf("/") === 0){
+            name = name.substring(name.indexOf("/") + 1, name.length);
+        }
+        if(name.indexOf(" ") > -1){
+            name = name.substring(0, name.indexOf(" "));
+        }
+        //console.log("NAME: " + name)
+        for(let tag of tags.tags){
+            if(tag.name === name){
+                return tag;
+            }
+        }
+        return undefined;
+    }
+
+    static isComment(str:string):Boolean{
+        if(str.indexOf("<!--") === 0 && str.indexOf("-->") > 3){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     openBodyDefault():HTMLElement{
@@ -215,6 +260,88 @@ export class HTMLSourceCode{
         let element:HTMLElement = this.openTag(tag);
         element.addAttributeId(value);
         return element;
+    }
+
+    parse(sourceCode:string):void{
+        sourceCode = cleanSourceCode(sourceCode);
+        while(HTMLSourceCode.containsTags(sourceCode)){
+            let index1 = sourceCode.indexOf("<");
+            if(index1 > 0){
+                this.addContent(sourceCode.substring(0, index1).trim());
+                sourceCode = sourceCode.substring(index1, sourceCode.length);
+            }else{
+                let index2 = sourceCode.indexOf(">") + 1;
+                let tag = sourceCode.substring(0, index2);
+                tag = sys.replaceAll(tag, "/>", ">");
+                if(HTMLSourceCode.isComment(tag)){
+                    this.addComment(HTMLSourceCode.extractComment(tag));
+                }else{
+                    if(tag.toLowerCase().indexOf("doctype") > -1){
+                        this.addDoctype();
+                    }else{
+                        //console.log("TAG: " + tag);
+                        let name:string = tag.substring(1, tag.length - 1);
+                        //console.log("TAG-NAME: " + name);
+                        let t = HTMLSourceCode.getTag(name);
+                        if(t !== undefined){
+                            if(t.closed){
+                                if(name.indexOf("/") === 0){
+                                    name = name.substring(name.indexOf("/") + 1, name.length);
+                                    if(name.indexOf(" ") > -1){
+                                        name = name.substring(0, name.indexOf(" "));
+                                    }
+                                    name = name.trim();
+                                    //console.log("CLOSE: " + name);
+                                    this.closeTagUnsafe(name);
+                                }else{
+                                    //console.log("OPEN: " + name);
+                                    createElement(this.openTagUnsafe(name), getParas(name));
+                                }
+                            }else{
+                                //console.log("ADD: " + name);
+                                createElement(this.addTagUnsafe(name), getParas(name));
+                            }
+                        }
+                    }
+                }
+                sourceCode = sourceCode.substring(index2, sourceCode.length);
+            }
+        }
+        sourceCode = sourceCode.trim();
+        if(sourceCode.length > 0){
+            this.addContent(sourceCode);
+        }
+        //console.log("sourceCode: " + sourceCode);
+
+        //SubFunctions
+        function cleanSourceCode(sourceCode:string):string{
+            sourceCode = sys.removeBreaksAndTabs(sourceCode);
+            sourceCode = sys.removeDoubleSpaces(sourceCode);
+            return sourceCode.trim();
+        }
+
+        function createElement(tag:HTMLElement, paras:string[]):HTMLElement{
+            for(let p of paras){
+                //console.log("PARA: " + p);
+                if(p.indexOf("=") < 0){
+                    tag.addAttribute(p);
+                }else{
+                    let split:string[] = p.split("=");
+                    tag.addAttribute(split[0], split[1]);
+                }
+            }
+            return tag;
+        }
+
+        function getParas(str:string):string[]{
+            str = str.trim();
+            let paras:string[] = [];
+            if(str.indexOf(" ") > -1){
+                paras = str.split(" ");
+                paras.shift();
+            }
+            return paras;
+        }
     }
 
     //Get-Methods

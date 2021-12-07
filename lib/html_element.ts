@@ -27,13 +27,13 @@ export class HTMLElement{
     }
 
     //Methods
-    addAttribute(name:string, value:string):void{
+    addAttribute(name:string, value?:string):void{
         if(this.validateAttribute(name)){
             this.addAttributeUnsafe(name, value);
         }
     }
 
-    addAttributeUnsafe(name:string, value:string):void{
+    addAttributeUnsafe(name:string, value?:string):void{
         if(this.tag && !this.closed && !sys.isNull(name)){
             this.attributes.push(new HTMLTagAttribute(name, value));
         }

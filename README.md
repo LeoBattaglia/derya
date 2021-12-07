@@ -1,7 +1,7 @@
 # Derya
 
 HTML- & CSS-CodeGenerator, developed in TypeScript on Node.js. Contains a lot
-of classes and functions to generate and edit HTML- and CSS-Code.
+of classes and functions to generate, parse and edit HTML- and CSS-Code.
 
 ## CSS
 The CSS-SourceCode-Class contains CSS-Elements, which contains CSS-Properties.

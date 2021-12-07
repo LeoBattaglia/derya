@@ -1,6 +1,7 @@
 //Imports
 import {CSSElement} from "./css_element";
 import {SourceObject} from "samara";
+import * as sys from "samara";
 
 //Classes
 export class CSSSourceCode{

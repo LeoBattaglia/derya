@@ -1,3 +1,6 @@
+//Imports
+import * as sys from "samara"
+
 //Class
 export class HTMLTagAttribute{
     //Declarations
@@ -5,9 +8,11 @@ export class HTMLTagAttribute{
     _value:string;
 
     //Constructor
-    constructor(name:string, value:string){
+    constructor(name:string, value?:string){
         this.name = name;
-        this.value = value;
+        if(!sys.isNull(value)){
+            this.value = value;
+        }
     }
 
     //Get-Methods
@@ -16,7 +21,11 @@ export class HTMLTagAttribute{
     }
 
     get value():string{
-        return this._value;
+        if(sys.isNull(this._value)){
+            return undefined;
+        }else{
+            return this._value;
+        }
     }
 
     //Set-Methods
