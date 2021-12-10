@@ -4,8 +4,8 @@ import * as sys from "samara"
 //Class
 export class HTMLTagAttribute{
     //Declarations
-    _name:string;
-    _value:string;
+    private _name:string;
+    private _value:string;
 
     //Constructor
     constructor(name:string, value?:string){

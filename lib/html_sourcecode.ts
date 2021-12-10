@@ -179,6 +179,7 @@ export class HTMLSourceCode{
                 tabs += "\t";
             }
             html += tabs + element.getContent() + "\r\n";
+            //console.log("YYY: " + element.getContent());
             if(element.tag && isClosedTag(element.content) && !element.closed){
                 lvl++;
             }
@@ -295,11 +296,11 @@ export class HTMLSourceCode{
                                     this.closeTagUnsafe(name);
                                 }else{
                                     //console.log("OPEN: " + name);
-                                    createElement(this.openTagUnsafe(name), getParas(name));
+                                    createElement(this.openTagUnsafe(extractName(name)), getParas(name));
                                 }
                             }else{
                                 //console.log("ADD: " + name);
-                                createElement(this.addTagUnsafe(name), getParas(name));
+                                createElement(this.addTagUnsafe(extractName(name)), getParas(name));
                             }
                         }
                     }
@@ -324,21 +325,40 @@ export class HTMLSourceCode{
             for(let p of paras){
                 //console.log("PARA: " + p);
                 if(p.indexOf("=") < 0){
+                    //console.log("PARA1: " + p);
                     tag.addAttribute(p);
                 }else{
                     let split:string[] = p.split("=");
-                    tag.addAttribute(split[0], split[1]);
+                    //console.log("PARA2: " + split[0] + " || " +  split[1]);
+                    tag.addAttribute(split[0].toLowerCase().trim(), sys.removeAll(split[1], "\"").trim());
                 }
             }
+            //console.log("TTT: " + tag.attributes.length);
             return tag;
+        }
+
+        function extractName(str:string):string{
+            str = str.trim();
+            if(str.indexOf(" ") < 0){
+                return str;
+            }else{
+                return str.substring(0, str.indexOf(" "));
+            }
         }
 
         function getParas(str:string):string[]{
             str = str.trim();
             let paras:string[] = [];
             if(str.indexOf(" ") > -1){
-                paras = str.split(" ");
-                paras.shift();
+                str = str.substring(str.indexOf(" ") + 1, str.length);
+                //console.log("GP: " + str);
+                if(str.indexOf("\" ") < 0){
+                    paras.push(str);
+                }else{
+                    paras = str.split("\" ");
+                }
+                //paras = str.split(" ");
+                //paras.shift();
             }
             return paras;
         }

@@ -93,6 +93,7 @@ export class HTMLElement{
             }else{
                 let tag:string = this.content;
                 for(let attribute of this.attributes){
+                    //console.log("VVV: " + attribute.name + " || " + attribute.value);
                     if(sys.isNull(attribute.value)){
                         tag += " " + attribute.name;
                     }else{
