@@ -44,6 +44,13 @@ export class HTMLSourceCode{
         return undefined;
     }
 
+    addContentUnsafe(content:string):HTMLElement{
+        if(!sys.isNull(content)){
+            return this.addElement(new HTMLElement(this.getNewID(), content.trim(), false, undefined));
+        }
+        return undefined;
+    }
+
     addDoctype():HTMLElement{
         return this.addElement(new HTMLElement(this.getNewID(), "!DOCTYPE html", true, false));
     }
