@@ -247,6 +247,13 @@ export class HTMLSourceCode{
         return tag;
     }
 
+    openScriptDefault(src:string):HTMLElement{
+        let tag:HTMLElement = this.openScript();
+        tag.addAttributeType("text/javascript");
+        tag.addAttributeSrc(src);
+        return tag;
+    }
+
     openTag(tag:string):HTMLElement{
         if(isClosedTag(tag.toLowerCase())){
             return this.openTagUnsafe(tag);
