@@ -279,14 +279,24 @@ export class HTMLSourceCode{
 
     parse(sourceCode:string):void{
         sourceCode = cleanSourceCode(sourceCode);
+        let isScript:Boolean = false;
         while(HTMLSourceCode.containsTags(sourceCode)){
-            let index1 = sourceCode.indexOf("<");
+            let index1:number;
+            if(isScript){
+                index1 = sourceCode.indexOf("</script>");
+                console.log("SCRIPT: " + sourceCode.substring(0, index1).trim());
+                this.addContentUnsafe(sourceCode.substring(0, index1).trim());
+                sourceCode = sourceCode.substring(index1, sourceCode.length);
+                isScript = false;
+            }
+            index1 = sourceCode.indexOf("<");
             if(index1 > 0){
+                console.log("CONTENT: " + sourceCode.substring(0, index1).trim());
                 this.addContent(sourceCode.substring(0, index1).trim());
                 sourceCode = sourceCode.substring(index1, sourceCode.length);
             }else{
-                let index2 = sourceCode.indexOf(">") + 1;
-                let tag = sourceCode.substring(0, index2);
+                let index2:number = sourceCode.indexOf(">") + 1;
+                let tag:string = sourceCode.substring(0, index2);
                 tag = sys.replaceAll(tag, "/>", ">");
                 if(HTMLSourceCode.isComment(tag)){
                     this.addComment(HTMLSourceCode.extractComment(tag));
@@ -294,9 +304,12 @@ export class HTMLSourceCode{
                     if(tag.toLowerCase().indexOf("doctype") > -1){
                         this.addDoctype();
                     }else{
-                        //console.log("TAG: " + tag);
+                        console.log("TAG: " + tag);
                         let name:string = tag.substring(1, tag.length - 1);
-                        //console.log("TAG-NAME: " + name);
+                        if(name === "script"){
+                            isScript = true;
+                        }
+                        console.log("TAG-NAME: " + name);
                         let t = HTMLSourceCode.getTag(name);
                         if(t !== undefined){
                             if(t.closed){
@@ -306,14 +319,14 @@ export class HTMLSourceCode{
                                         name = name.substring(0, name.indexOf(" "));
                                     }
                                     name = name.trim();
-                                    //console.log("CLOSE: " + name);
+                                    console.log("CLOSE: " + name);
                                     this.closeTagUnsafe(name);
                                 }else{
-                                    //console.log("OPEN: " + name);
+                                    console.log("OPEN: " + name);
                                     createElement(this.openTagUnsafe(extractName(name)), getParas(name));
                                 }
                             }else{
-                                //console.log("ADD: " + name);
+                                console.log("ADD: " + name);
                                 createElement(this.addTagUnsafe(extractName(name)), getParas(name));
                             }
                         }
